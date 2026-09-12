@@ -265,7 +265,7 @@
       "name": "Concord",
       "title": "Concord: A GPU cluster scheduler with enhanced interference profiling and asymmetric job packing",
       "authors": "Xinhua Wang, Weiwei Lin, Haijie Wu, Jidong Zhai, Keqin Li",
-      "venue": "FGCS · 已有 DOI",
+      "venue": "FGCS",
       "year": 2026,
       "area": "scheduling",
       "summary": "通过干扰建模与非对称作业组合，优化 GPU 集群中的资源共享与调度。正式卷期为 2026 年 10 月。",

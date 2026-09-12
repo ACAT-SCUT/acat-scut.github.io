@@ -9,7 +9,7 @@ Website: https://acat-scut.github.io/
 - `content/site.json`：五个研究方向、研究成员、精选论文与来源。
 - `scripts/build.py`：共享页面模板、导师介绍、科研项目和联系信息。
 - `site/styles.css`：响应式样式。
-- `site/script.js`：移动端导航。
+- `site/script.js`：保留的脚本入口；导航使用原生链接，无脚本依赖。
 - `site/assets/`：团队原有标志、导师公开头像。
 
 修改后运行：
@@ -34,4 +34,4 @@ python3 -m http.server 8765 --directory site
 - 论文列表为精选，不是完整成果目录；招生以学校及导师通知为准。
 - 团队徽标与导师照片仍归原权利人所有，不对图片另行授予许可。
 
-页面全部预渲染，禁用 JavaScript 时正文和桌面导航仍可阅读。站点不收集访问者信息。
+页面全部预渲染，采用左侧团队资料与右侧连续正文的紧凑学术布局；桌面和手机导航均使用原生链接，禁用 JavaScript 也可完整使用。站点不收集访问者信息。
