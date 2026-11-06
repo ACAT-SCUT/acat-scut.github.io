@@ -1,0 +1,646 @@
+[
+  {
+    "id": "m001",
+    "name": "南佳豪",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m002",
+    "name": "陶禹任",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m003",
+    "name": "张慕雪",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m004",
+    "name": "王丽",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m005",
+    "name": "李东阳",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m006",
+    "name": "徐思尧",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m007",
+    "name": "胡靖",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m008",
+    "name": "谭陈煜",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m009",
+    "name": "李维东",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m010",
+    "name": "张文",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m011",
+    "name": "张耿兵",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m012",
+    "name": "孙家政",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m013",
+    "name": "张志鹏",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m014",
+    "name": "吕书涵",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m015",
+    "name": "徐尔羚",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m016",
+    "name": "刘泱",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2026
+  },
+  {
+    "id": "m017",
+    "name": "李董东",
+    "role": "postdoc",
+    "status": "former"
+  },
+  {
+    "id": "m018",
+    "name": "李孟恒",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2025,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/limengheng.md"
+  },
+  {
+    "id": "m019",
+    "name": "吴海杰",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2025,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/wuhaijie.md"
+  },
+  {
+    "id": "m020",
+    "name": "熊潼",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2025,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/xiongtong.md"
+  },
+  {
+    "id": "m021",
+    "name": "叶晓明",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2025,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/yexiaoming.md"
+  },
+  {
+    "id": "m022",
+    "name": "沈文轩",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2025,
+    "url": "https://p114514-new.github.io/"
+  },
+  {
+    "id": "m023",
+    "name": "陈云风",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m024",
+    "name": "姚子毅",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m025",
+    "name": "温文浩",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m026",
+    "name": "徐浩恩",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m027",
+    "name": "袁振东",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m028",
+    "name": "邱椿雲",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m029",
+    "name": "李卓兴",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m030",
+    "name": "李昱",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m031",
+    "name": "李俊淇",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2025
+  },
+  {
+    "id": "m032",
+    "name": "牟奇",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2024,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/muqi.md"
+  },
+  {
+    "id": "m033",
+    "name": "陈冠宇",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2024,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/chenguanyu.md"
+  },
+  {
+    "id": "m034",
+    "name": "黄悦斌",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2024,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/huangyuebin.md"
+  },
+  {
+    "id": "m035",
+    "name": "钟浩城",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2024,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/zhonghaocheng.md"
+  },
+  {
+    "id": "m036",
+    "name": "李昊",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m037",
+    "name": "吴凯敏",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m038",
+    "name": "吴姿娴",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m039",
+    "name": "雷富凯",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m040",
+    "name": "吴陈洁婷",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m041",
+    "name": "尹浩朗",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m042",
+    "name": "鄢志宇",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2024
+  },
+  {
+    "id": "m043",
+    "name": "刘国志",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2023,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/liuguozhi.md"
+  },
+  {
+    "id": "m044",
+    "name": "林升升",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2023,
+    "url": "https://lss-1138.github.io/"
+  },
+  {
+    "id": "m045",
+    "name": "李胜海",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2023,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/lishenghai.md"
+  },
+  {
+    "id": "m046",
+    "name": "黄嘉华",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2023,
+    "url": "https://dadiaokua.github.io"
+  },
+  {
+    "id": "m047",
+    "name": "吴纪宽",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m048",
+    "name": "邱鸿楷",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m049",
+    "name": "陈泊圻",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m050",
+    "name": "林锦辉",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m051",
+    "name": "陈浩钧",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m052",
+    "name": "庄梓龙",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m053",
+    "name": "肖亦灯",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m054",
+    "name": "卢沂康",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2023
+  },
+  {
+    "id": "m055",
+    "name": "罗潇轩",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2022,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/luoxiaoxuan.md"
+  },
+  {
+    "id": "m056",
+    "name": "彭鹏",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2022,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/pengpeng.md"
+  },
+  {
+    "id": "m057",
+    "name": "胡正阳",
+    "role": "phd",
+    "status": "current",
+    "entryYear": 2022,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/huzhengyang.md"
+  },
+  {
+    "id": "m058",
+    "name": "莫瑞超",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2022,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/moruichao.md"
+  },
+  {
+    "id": "m059",
+    "name": "李志豪",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m060",
+    "name": "陈锐",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m061",
+    "name": "林文俊",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m062",
+    "name": "赵飞雨",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m063",
+    "name": "周智勇",
+    "role": "master",
+    "status": "current",
+    "entryYear": 2022
+  },
+  {
+    "id": "m064",
+    "name": "陈帆",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m065",
+    "name": "林泓睿",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m066",
+    "name": "曾华玥",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2022
+  },
+  {
+    "id": "m067",
+    "name": "王新华",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2021,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/wangxinhua.md"
+  },
+  {
+    "id": "m068",
+    "name": "林建鹏",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m069",
+    "name": "黄惠康",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2021,
+    "url": "https://wellcome0321.github.io"
+  },
+  {
+    "id": "m070",
+    "name": "王松波",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m071",
+    "name": "胡智超",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m072",
+    "name": "梁杰超",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m073",
+    "name": "许皓钧",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m074",
+    "name": "金育妍",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m075",
+    "name": "曾梓楠",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m076",
+    "name": "汤元丰",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m077",
+    "name": "吴国楷",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2021
+  },
+  {
+    "id": "m078",
+    "name": "沈王博",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2020
+  },
+  {
+    "id": "m079",
+    "name": "熊辰念",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2020,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/xiongchennian.md"
+  },
+  {
+    "id": "m080",
+    "name": "许银海",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2020
+  },
+  {
+    "id": "m081",
+    "name": "吴伟正",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2020
+  },
+  {
+    "id": "m082",
+    "name": "李俊祺",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2020
+  },
+  {
+    "id": "m083",
+    "name": "石方",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2019
+  },
+  {
+    "id": "m084",
+    "name": "张皓同",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2019,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/zhanghaotong.md"
+  },
+  {
+    "id": "m085",
+    "name": "王永祥",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2019
+  },
+  {
+    "id": "m086",
+    "name": "李庆宇",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2019
+  },
+  {
+    "id": "m087",
+    "name": "张懿",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2019
+  },
+  {
+    "id": "m088",
+    "name": "赖龙波",
+    "role": "master",
+    "status": "former",
+    "entryYear": 2019
+  },
+  {
+    "id": "m089",
+    "name": "利建卓",
+    "role": "phd",
+    "status": "former",
+    "entryYear": 2018,
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/lijianzhuo.md"
+  }
+]

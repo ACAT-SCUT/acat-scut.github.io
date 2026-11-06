@@ -1,0 +1,153 @@
+[
+  {
+    "id": "power",
+    "title": "数据中心节能与绿色计算",
+    "short": "绿色计算",
+    "en": "Sustainable Computing",
+    "summary": "面向数据中心的计算与能源系统，研究服务器算力、集群能效和整体节能。",
+    "topics": [
+      "服务器算力与集群能效建模优化",
+      "集群与 AI 算力能效评测基准",
+      "数据中心 PUE 建模、仿真与优化",
+      "数据中心散热建模与制冷优化",
+      "数据中心供电管理优化"
+    ],
+    "source": "https://github.com/ACAT-SCUT/.github/blob/main/profile/research-resources/power.md",
+    "examples": [
+      "paper-nospf-2026",
+      "paper-tevp-2024"
+    ],
+    "memberIds": [
+      "m035",
+      "m046",
+      "m032",
+      "m021",
+      "m005",
+      "m001",
+      "m004",
+      "m062",
+      "m039",
+      "m041",
+      "m031",
+      "m030",
+      "m026",
+      "m008"
+    ]
+  },
+  {
+    "id": "scheduling",
+    "title": "算力优化和算电协同",
+    "short": "算力与算电",
+    "en": "Computing and Energy Coordination",
+    "summary": "围绕异构 AI 算力和能源供给，研究高效调度、应用优化与算电协同。",
+    "topics": [
+      "CPU、GPU、NPU 等异构算力调度优化",
+      "面向大模型与 HPC 应用的算力优化",
+      "分散绿色算力纳管与调度",
+      "算电协同优化"
+    ],
+    "source": "https://github.com/ACAT-SCUT/.github/blob/main/profile/research-resources/scheduling.md",
+    "examples": [
+      "paper-kairos-2025",
+      "paper-concord-2026"
+    ],
+    "memberIds": [
+      "m067",
+      "m019",
+      "m089",
+      "m033",
+      "m034",
+      "m021",
+      "m018",
+      "m037",
+      "m038",
+      "m024",
+      "m009",
+      "m011",
+      "m010",
+      "m016"
+    ]
+  },
+  {
+    "id": "llm",
+    "title": "大模型优化与应用",
+    "short": "大模型",
+    "en": "Large Language Models",
+    "summary": "研究大模型的资源效率、安全性与应用能力，探索面向真实业务的智能体技术。",
+    "topics": [
+      "资源安全高效的大模型微调",
+      "大模型性能、能效与安全评测优化",
+      "垂直大模型与智能体优化",
+      "数据治理、内容审查与智能问答"
+    ],
+    "source": "https://github.com/ACAT-SCUT/.github/blob/main/profile/research-resources/llm.md",
+    "examples": [
+      "paper-surgery-2026",
+      "paper-double-bench-2026"
+    ],
+    "memberIds": [
+      "m043",
+      "m045",
+      "m046",
+      "m020",
+      "m006",
+      "m029",
+      "m024",
+      "m027",
+      "m013",
+      "m015"
+    ]
+  },
+  {
+    "id": "ts",
+    "title": "时序预测模型与应用",
+    "short": "时间序列",
+    "en": "Time Series Forecasting",
+    "summary": "以轻量化模型刻画时间序列规律，面向实际场景开展高效、可靠的预测研究。",
+    "topics": [
+      "轻量化时序预测模型",
+      "高效多元时间序列预测",
+      "异常检测、功耗、股票与交通预测",
+      "工业时序大模型"
+    ],
+    "source": "https://github.com/ACAT-SCUT/.github/blob/main/profile/research-resources/ts.md",
+    "examples": [
+      "paper-sparsetsf-2026",
+      "paper-cyclenet-2024"
+    ],
+    "memberIds": [
+      "m044",
+      "m057",
+      "m028",
+      "m025",
+      "m007",
+      "m012"
+    ]
+  },
+  {
+    "id": "fl",
+    "title": "边缘智能与联邦学习",
+    "short": "边缘智能",
+    "en": "Edge Intelligence and Federated Learning",
+    "summary": "面向分布式边缘设备，研究推理协同、统一管理与联邦学习。",
+    "topics": [
+      "分布式边缘推理与 Atlas 计算平台协同",
+      "动态异构设备统一管理与融合调度",
+      "跨端智能协同技术",
+      "联邦学习算法、框架与应用"
+    ],
+    "source": "https://github.com/ACAT-SCUT/.github/blob/main/profile/research-resources/fl.md",
+    "examples": [
+      "paper-adaptivefl-2025",
+      "paper-pawssp-2026"
+    ],
+    "memberIds": [
+      "m084",
+      "m017",
+      "m056",
+      "m063",
+      "m066",
+      "m040"
+    ]
+  }
+]

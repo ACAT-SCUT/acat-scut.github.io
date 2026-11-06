@@ -2,3 +2,11 @@
 __pycache__/
 *.pyc
 .sites-runtime/
+
+# Local deliverables, research documents, and historical reports.
+# Includes docs/实验室信息梳理/; these files stay in the project but are not published.
+/docs/
+
+# Original attachments, rosters, source snapshots, validation evidence, caches,
+# temporary scripts, and backups. Includes .local/实验室信息核查/ and existing step1/.
+/.local/

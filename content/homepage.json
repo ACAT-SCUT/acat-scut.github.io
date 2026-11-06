@@ -1,0 +1,83 @@
+{
+  "featured": [
+    "paper-nospf-2026",
+    "paper-sparsetsf-2026",
+    "paper-kairos-2025",
+    "paper-surgery-2026",
+    "paper-adaptivefl-2025",
+    "paper-cyclenet-2024"
+  ],
+  "updates": [
+    {
+      "paper": "paper-concord-2026",
+      "summary": "GPU 集群干扰建模与非对称作业组合"
+    },
+    {
+      "paper": "paper-surgery-2026",
+      "summary": "利用注意力沉降机制缓解大模型有害微调"
+    },
+    {
+      "paper": "paper-pawssp-2026",
+      "summary": "联合优化边缘工作流调度与服务放置"
+    },
+    {
+      "paper": "paper-prodigal-2026",
+      "summary": "联邦学习中超越鲁棒聚合的后门防御"
+    }
+  ],
+  "recognition": [
+    {
+      "paper": "paper-sparsetsf-2024",
+      "label": [
+        {
+          "text": "ICML 2024 "
+        },
+        {
+          "text": "Oral",
+          "tag": "b"
+        }
+      ]
+    },
+    {
+      "paper": "paper-cyclenet-2024",
+      "label": [
+        {
+          "text": "NeurIPS 2024 "
+        },
+        {
+          "text": "Spotlight",
+          "tag": "b"
+        }
+      ]
+    },
+    {
+      "paper": "paper-sparsetsf-2026",
+      "label": [
+        {
+          "text": "IEEE "
+        },
+        {
+          "text": "TPAMI",
+          "tag": "b"
+        }
+      ]
+    },
+    {
+      "paper": "paper-kairos-2025",
+      "label": [
+        {
+          "text": "TPDS",
+          "tag": "b"
+        }
+      ]
+    },
+    {
+      "paper": "paper-exfairs-2026",
+      "label": [
+        {
+          "text": "AAAI 2026"
+        }
+      ]
+    }
+  ]
+}

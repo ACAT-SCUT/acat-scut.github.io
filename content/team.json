@@ -1,0 +1,88 @@
+{
+  "contentUpdated": "2026-11-06",
+  "description": "华南理工大学先进计算体系结构团队，研究绿色计算、算电协同、大模型、时间序列与边缘智能。",
+  "about": "ACAT 是华南理工大学计算机科学与工程学院的科研团队，前身为 2005 年成立的计算机系统结构研究所。团队聚焦云计算与绿色计算、算力与大模型优化、物联网与边缘智能，探索面向真实应用的高效、智能与可持续计算技术。",
+  "lead": {
+    "name": "林伟伟",
+    "englishName": "Weiwei Lin",
+    "url": "https://www.scholat.com/linweiwei",
+    "position": "华南理工大学教授 · 博士生导师",
+    "affiliations": "鹏城实验室双聘研究员 · CCF 杰出会员 · IEEE 高级会员",
+    "interests": "云计算调度优化与节能、算力能效建模与优化、大模型与边缘智能、时序预测建模与应用",
+    "honor": "2021—2025 年连续入选斯坦福大学全球前 2% 顶尖科学家榜单。",
+    "title": "教授",
+    "photo": "assets/weiwei-lin.jpg",
+    "sidebarPosition": "团队负责人 · 教授 · 博士生导师",
+    "bioAfterName": [
+      {
+        "text": "担任团队负责人，博士生导师、鹏城实验室双聘研究员，"
+      },
+      {
+        "text": "CCF 杰出会员、IEEE 高级会员",
+        "tag": "strong"
+      },
+      {
+        "text": "。"
+      }
+    ]
+  },
+  "contact": {
+    "email": "linww@scut.edu.cn",
+    "address": "广州市大学城 · 华南理工大学计算机学院 B3 栋",
+    "admissionsUrl": "https://yz.scut.edu.cn/",
+    "intro": [
+      {
+        "text": "欢迎对"
+      },
+      {
+        "text": "云计算、人工智能与先进计算系统",
+        "tag": "strong"
+      },
+      {
+        "text": "感兴趣的同学，以及寻求学术交流与科研合作的研究者联系团队。"
+      }
+    ],
+    "admissionsNote": "招生要求、名额与时间安排，以学校及导师最新通知为准。"
+  },
+  "achievements": [
+    {
+      "title": "广东省科技进步奖二等奖（2020）",
+      "text": "“云计算调度优化技术”，排名第一。"
+    },
+    {
+      "title": "中国国际大学生创新大赛金奖（2023、2024）",
+      "text": "作为第一指导老师，指导学生获产业命题赛道总决赛金奖。"
+    },
+    {
+      "title": "国家标准 GB 43630-2023",
+      "text": "参与制定《塔式和机架式服务器能效限定值及能效等级》。"
+    }
+  ],
+  "identity": {
+    "shortName": "ACAT",
+    "suffix": "@ SCUT",
+    "name": "先进计算体系结构团队",
+    "englishName": "Advanced Computing Architecture Team",
+    "affiliation": [
+      "华南理工大学",
+      "计算机科学与工程学院"
+    ],
+    "location": "Guangzhou, China",
+    "logo": "assets/acat-logo.png",
+    "copyrightYear": 2026
+  },
+  "links": {
+    "baseUrl": "https://acat-scut.github.io/",
+    "organization": "https://github.com/ACAT-SCUT",
+    "scholar": "https://scholar.google.com/citations?user=IWsha94AAAAJ",
+    "college": "https://www2.scut.edu.cn/cs/"
+  },
+  "copy": {
+    "researchDescription": "围绕云端算力、智能模型与边缘设备，开展计算系统与算法的协同研究。",
+    "peopleDescription": "团队负责人、当前成员与往届成员；按身份及入学年级整理。",
+    "publicationsDescription": "精选近年代表成果；会议版与期刊扩展版分别列出。",
+    "formerNote": "汇集曾在团队学习或工作的成员。",
+    "projectSourceLabel": "教授公开主页",
+    "projectNote": "，列出部分项目及计划周期。"
+  }
+}
