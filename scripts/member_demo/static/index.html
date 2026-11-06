@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>成员维护体验 · ACAT</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<div class="app-shell">
+<header class="app-header"><div><p class="eyebrow">ACAT / WORKFLOW DEMO</p><h1>成员维护体验</h1><p class="muted">虚构数据 · 角色切换仅用于试用 · 填写与审核进度保存在本机</p></div><button class="quiet" id="reset">重置演示数据</button></header>
+<nav class="tabs" aria-label="测试角色切换"><button class="tab" data-view="student" aria-current="page">1．学生填报</button><button class="tab" data-view="review">2．维护者审核 <span id="pending-count"></span></button><button class="tab" data-view="members">3．成员展示预览</button></nav>
+<main id="main" tabindex="-1">
+<div id="message" role="status" aria-live="polite" hidden></div>
+<noscript><p>填报和审核演示需要开启 JavaScript。<a href="/members">成员展示预览</a>可以直接查看和展开分组。</p></noscript>
+<section id="view-student" class="view">
+<div class="section-heading"><h2>提交一份变更申请</h2><button class="text-button" id="fill-example">填入当前类型的示例</button></div>
+<p class="route-note">建议先试：为“示例同学甲”的2021级硕士经历申请毕业，再切换维护者审核。</p>
+<form id="request-form">
+<label>申请类型<select id="kind" name="kind"><option value="graduate">申请毕业</option><option value="add">新增经历</option><option value="update">修改资料</option></select></label>
+<div class="form-row"><label>姓名<input id="name" name="name" required maxlength="80" value="示例同学甲" autocomplete="off"></label><label>对应身份<select id="role" name="role"><option value="master">硕士</option><option value="phd">博士</option><option value="postdoc">博士后</option></select></label><label><span id="year-label">入学年份</span><input id="entryYear" name="entryYear" type="number" min="1900" max="2100" value="2021" required></label></div>
+<p id="identity-help" class="field-help">用姓名、身份和年份定位这段经历；毕业申请不会影响其他经历。</p>
+<div id="graduate-fields"><label class="check-label"><input id="graduationAcknowledged" type="checkbox" required>我确认申请的是上述这段经历的“已毕业”状态。</label></div>
+<div id="add-fields" hidden><fieldset><legend>这段经历的研究方向（可多选、可暂不选择）</legend><div id="add-directions" class="checks"></div></fieldset><label>个人主页（选填）<input id="add-url" type="url" placeholder="https://…"></label><p class="field-help">同一人的姓名和主页由各段经历共用；新增经历会保留旧经历。</p></div>
+<div id="update-fields" hidden><label>需要修改什么<select id="change-field"><option value="url">个人主页</option><option value="researchIds">这段经历的研究方向</option><option value="name">姓名</option><option value="entryYear">这段经历的年份</option><option value="role">纠正这段经历的身份</option></select></label><p class="field-help">升学或增加博士后经历请选“新增经历”；这里的身份修改只用于纠错。</p><label id="change-text-label">新的内容<input id="change-value" type="text" placeholder="填写需要更新的内容"></label><label id="change-role-label" hidden>新的身份<select id="change-role"><option value="master">硕士</option><option value="phd">博士</option><option value="postdoc">博士后</option></select></label><fieldset id="change-directions-field" hidden><legend>新的方向归属（选中的方向将替换旧归属）</legend><div id="change-directions" class="checks"></div></fieldset><label class="check-label" id="clear-label"><input id="clear-field" type="checkbox">明确清空这一项</label><p class="field-help">留空会保留旧值。清空主页、方向或博士后年份时，须勾选“明确清空”。</p></div>
+<div class="actions"><button type="submit" class="primary">提交申请</button><span class="muted">提交后先等待审核，不直接改变成员展示。</span></div>
+</form>
+<section id="receipt" class="receipt" hidden tabindex="-1"><h3>申请已提交</h3><p id="receipt-text"></p><button class="primary" id="go-review">去维护者审核</button></section>
+<section class="submitted"><h3>本次试用已提交的申请</h3><div id="student-requests"></div></section>
+</section>
+<section id="view-review" class="view" hidden>
+<div class="section-heading"><h2>逐份审核，再预览应用</h2><div class="export-actions"><button class="text-button" id="export-requests">导出申请 CSV</button><button class="text-button" id="export-reviews">导出审核 CSV</button></div></div>
+<div class="review-layout"><aside aria-label="申请列表"><div id="review-list"></div></aside><div id="review-detail"><p class="empty">提交申请后，可在这里查看和审核。</p></div></div>
+</section>
+<section id="view-members" class="view" hidden><div class="section-heading"><h2>应用后的实际展示</h2><a href="/members" target="_blank" rel="noopener">单独打开预览 ↗</a></div><p class="muted">审核通过后还需要预览并应用，这里的内容才会更新。</p><iframe id="members-frame" title="虚构成员的方向、身份及年级分组" src="/members"></iframe></section>
+</main>
+<footer>本地演示只使用虚构成员；真实名册和现有网站不会被修改。</footer>
+</div></body></html>

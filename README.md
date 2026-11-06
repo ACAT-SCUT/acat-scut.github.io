@@ -19,6 +19,12 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 ## 项目结构
 
+本地成员维护演示可用下列命令启动，浏览器打开 <http://127.0.0.1:8766/>；使用虚构资料，不修改正式名册或页面。试用步骤和数据位置见[演示说明](scripts/member_demo/README.md)。
+
+```sh
+python -B -X utf8 scripts/member_demo/server.py --port 8766
+```
+
 ```text
 content/       六类正式 JSON 数据、数据字典和通用填写模板
 scripts/       数据读取、导入、静态构建、检查与测试
