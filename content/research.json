@@ -17,7 +17,7 @@
       "paper-nospf-2026",
       "paper-tevp-2024"
     ],
-    "memberIds": [
+    "memberOrder": [
       "m035",
       "m046",
       "m032",
@@ -51,7 +51,7 @@
       "paper-kairos-2025",
       "paper-concord-2026"
     ],
-    "memberIds": [
+    "memberOrder": [
       "m067",
       "m019",
       "m089",
@@ -85,7 +85,7 @@
       "paper-surgery-2026",
       "paper-double-bench-2026"
     ],
-    "memberIds": [
+    "memberOrder": [
       "m043",
       "m045",
       "m046",
@@ -115,7 +115,7 @@
       "paper-sparsetsf-2026",
       "paper-cyclenet-2024"
     ],
-    "memberIds": [
+    "memberOrder": [
       "m044",
       "m057",
       "m028",
@@ -141,7 +141,7 @@
       "paper-adaptivefl-2025",
       "paper-pawssp-2026"
     ],
-    "memberIds": [
+    "memberOrder": [
       "m084",
       "m017",
       "m056",

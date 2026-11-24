@@ -1,0 +1,123 @@
+.sidebar .lab-name {
+  font-weight: 750;
+}
+
+.sidebar .lab-name span {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sidebar .lab-chinese {
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.sidebar .affiliation,
+.sidebar .location {
+  font-size: .8125rem;
+}
+
+.sidebar .sidebar-lead a {
+  font-size: .9375rem;
+}
+
+.sidebar .sidebar-lead p {
+  font-size: .75rem;
+}
+
+.sidebar .site-nav {
+  gap: 2px;
+  padding-block: 8px;
+}
+
+.sidebar .site-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 3px 9px;
+  border-inline-start: 3px solid transparent;
+  border-radius: 0 4px 4px 0;
+  color: var(--text);
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+
+.sidebar .site-nav a:hover {
+  background: #eef2f6;
+  text-decoration: none;
+}
+
+.sidebar .site-nav a[aria-current="page"] {
+  border-inline-start-color: var(--accent);
+  background: var(--blue-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.sidebar .site-nav a:focus-visible {
+  outline-offset: 1px;
+}
+
+.sidebar .sidebar-links {
+  font-size: .8125rem;
+}
+
+@media (width >= 601px) {
+  .sidebar .sidebar-links {
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .sidebar .sidebar-links a {
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+    max-width: 100%;
+  }
+}
+
+@media (width >= 1000px) and (height >= 740px) {
+  .sidebar .lab-name {
+    font-size: 1.625rem;
+  }
+}
+
+@media (width >= 601px) and (height < 740px) {
+  .sidebar .site-nav {
+    gap: 0;
+    padding-block: 5px;
+  }
+
+  .sidebar .site-nav a {
+    min-height: 30px;
+  }
+}
+
+@media (width <= 600px) {
+  .sidebar .affiliation {
+    font-size: .75rem;
+  }
+
+  .sidebar .site-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px 6px;
+    padding: 10px 0 2px;
+  }
+
+  .sidebar .site-nav a {
+    justify-content: center;
+    min-height: 44px;
+    padding: 4px;
+    border-inline-start: 0;
+    border-block-end: 2px solid transparent;
+    border-radius: 4px 4px 0 0;
+    font-size: .875rem;
+    text-align: center;
+  }
+
+  .sidebar .site-nav a[aria-current="page"] {
+    border-block-end-color: var(--accent);
+  }
+}

@@ -1,20 +1,86 @@
 [
   {
-    "period": "2025—2028",
+    "id": "project-001",
     "title": "异构算力系统能效模型及仿真系统研究",
-    "note": "山东联合基金 · 2025.05—2028.04",
-    "id": "project-001"
+    "category": "vertical",
+    "funding": "山东省自然科学基金创新发展联合基金项目",
+    "period": "2025.05—2028.04"
   },
   {
-    "period": "2025—2028",
-    "title": "面向智算中心的 AI 算力综合管理平台及关键技术研究与应用示范",
-    "note": "广西重点研发 · 2025.03—2028.02",
-    "id": "project-002"
+    "id": "project-002",
+    "title": "面向智算中心的AI算力综合管理平台及关键技术研究与应用示范",
+    "category": "vertical",
+    "funding": "广西重点研发计划项目",
+    "period": "2025.03—2028.02"
   },
   {
-    "period": "2025—2026",
-    "title": "AI 集群中的作业优先级调度和碎片整理",
-    "note": "华为云合作项目 · 2025.09—2026.04",
-    "id": "project-003"
+    "id": "project-003",
+    "title": "AI集群中的作业优先级调度和碎片整理",
+    "category": "horizontal",
+    "funding": "华为云委托合作研发项目",
+    "period": "2025.09—2026.04"
+  },
+  {
+    "id": "project-004",
+    "title": "面向云计算的虚拟机能耗模型及其应用方法研究",
+    "category": "vertical",
+    "funding": "国家自然科学基金面上项目",
+    "period": "2018.01—2021.12"
+  },
+  {
+    "id": "project-005",
+    "title": "基于虚拟集群与容器技术的跨云数据密集型工作流计算研究",
+    "category": "vertical",
+    "funding": "国家自然科学基金（子课题）",
+    "start": "2019.01"
+  },
+  {
+    "id": "project-006",
+    "title": "云数据中心服务器的新功耗模型与节能方法",
+    "category": "vertical",
+    "funding": "国家自然科学基金面上项目",
+    "period": "2021.01—2024.12"
+  },
+  {
+    "id": "project-007",
+    "title": "基于国产CPU的云计算操作系统",
+    "category": "vertical",
+    "funding": "广东省重大应用基础研究项目（应用型专项）",
+    "period": "2019.10—2024.10"
+  },
+  {
+    "id": "project-008",
+    "title": "基于Atlas计算平台生态创新协同技术研究及应用",
+    "category": "vertical",
+    "funding": "广东省重点领域研发计划项目",
+    "period": "2021.01—2023.12"
+  },
+  {
+    "id": "project-009",
+    "title": "面向基准测试场景和实际业务场景的集群能效优化与基准设计",
+    "category": "horizontal",
+    "funding": "华为技术有限公司委托合作研发项目",
+    "period": "2023.09—2024.11"
+  },
+  {
+    "id": "project-010",
+    "title": "面向云边端一体化平台的关键基础技术研究",
+    "category": "horizontal",
+    "funding": "OPPO产学研合作项目",
+    "period": "2022.11—2023.11"
+  },
+  {
+    "id": "project-011",
+    "title": "数据中心能效建模技术项目",
+    "category": "horizontal",
+    "funding": "华为技术有限公司委托企业横向项目",
+    "period": "2021.10—2022.10"
+  },
+  {
+    "id": "project-012",
+    "title": "云业务能效提升技术研发合作项目",
+    "category": "horizontal",
+    "funding": "华为技术有限公司委托企业横向项目",
+    "period": "2020.01—2021.01"
   }
 ]

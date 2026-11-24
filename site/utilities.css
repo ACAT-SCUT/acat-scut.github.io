@@ -1,0 +1,32 @@
+.sidebar .sidebar-links a {
+  align-items: flex-start;
+  gap: 7px;
+  max-width: 100%;
+}
+
+.sidebar-links a > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.utility-icon {
+  flex: 0 0 16px;
+  margin-top: 2px;
+}
+
+@media (width <= 600px) {
+  .sidebar .sidebar-links a {
+    display: none;
+  }
+
+  .sidebar .sidebar-links a.utility-mobile {
+    display: inline-flex;
+  }
+}
+
+@media (1280px <= width <= 1500px) and (height >= 600px) {
+  /* Leave the fixed control its own space beside both sticky directories. */
+  .back-to-top-page:is(.publication-page, .people-page) .page-content {
+    padding-inline-end: 36px;
+  }
+}

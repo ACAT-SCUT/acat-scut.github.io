@@ -26,7 +26,7 @@ class SourceValidationTests(unittest.TestCase):
         self.reject(lambda d: d["research"][0]["memberIds"].append("missing"), "unknown reference")
 
     def test_missing_featured_paper_caught(self):
-        self.reject(lambda d: d["homepage"]["featured"].append("missing"), "unknown reference")
+        self.reject(lambda d: d["homepage"]["featured"].append({"paper": "missing"}), "unknown reference")
 
     def test_duplicate_paper_caught(self):
         self.reject(lambda d: d["papers"].append(copy.deepcopy(d["papers"][0])), "duplicate stable id")
@@ -48,8 +48,15 @@ class SourceValidationTests(unittest.TestCase):
     def test_invalid_project_link_rejected(self):
         self.reject(lambda d: d["projects"][0].update(url="javascript:alert(1)"), "URL must use https")
 
-    def test_recognition_reference_checked(self):
-        self.reject(lambda d: d["homepage"]["recognition"][0].update(paper="missing"), "unknown reference")
+    def test_update_reference_checked(self):
+        self.reject(lambda d: d["homepage"]["updates"][0].update(paper="missing"), "unknown reference")
+
+    def test_invalid_project_metadata_rejected(self):
+        self.reject(lambda d: d["projects"][0].update(category="unknown"), "invalid project category")
+        self.reject(lambda d: d["projects"][0].update(period="2028.01—2025.01"), "ends before it starts")
+
+    def test_unknown_corresponding_author_rejected(self):
+        self.reject(lambda d: d["papers"][0].update(correspondingAuthors=["Unknown author"]), "listed paper authors")
 
     def test_rich_text_cannot_inject_markup(self):
         self.reject(lambda d: d["meta"]["contact"].update(intro=[{"text": "test", "tag": "script"}]), "invalid text segment")

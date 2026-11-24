@@ -1,5 +1,5 @@
 {
-  "contentUpdated": "2026-11-06",
+  "contentUpdated": "2026-11-25",
   "description": "华南理工大学先进计算体系结构团队，研究绿色计算、算电协同、大模型、时间序列与边缘智能。",
   "about": "ACAT 是华南理工大学计算机科学与工程学院的科研团队，前身为 2005 年成立的计算机系统结构研究所。团队聚焦云计算与绿色计算、算力与大模型优化、物联网与边缘智能，探索面向真实应用的高效、智能与可持续计算技术。",
   "lead": {
@@ -69,20 +69,16 @@
     ],
     "location": "Guangzhou, China",
     "logo": "assets/acat-logo.png",
-    "copyrightYear": 2026
+    "copyrightYear": 2026,
+    "sidebarLogo": "assets/acat-logo-transparent.png"
   },
   "links": {
     "baseUrl": "https://acat-scut.github.io/",
     "organization": "https://github.com/ACAT-SCUT",
     "scholar": "https://scholar.google.com/citations?user=IWsha94AAAAJ",
-    "college": "https://www2.scut.edu.cn/cs/"
+    "college": "https://www2.scut.edu.cn/cs/2017/0629/c22284a328098/page.htm"
   },
   "copy": {
-    "researchDescription": "围绕云端算力、智能模型与边缘设备，开展计算系统与算法的协同研究。",
-    "peopleDescription": "团队负责人、当前成员与往届成员；按身份及入学年级整理。",
-    "publicationsDescription": "精选近年代表成果；会议版与期刊扩展版分别列出。",
-    "formerNote": "汇集曾在团队学习或工作的成员。",
-    "projectSourceLabel": "教授公开主页",
-    "projectNote": "，列出部分项目及计划周期。"
+    "publicationsDescription": "近年代表论文。会议版与期刊扩展版分别列出。"
   }
 }

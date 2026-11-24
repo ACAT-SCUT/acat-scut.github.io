@@ -1,0 +1,250 @@
+html:has(.people-page) {
+  scroll-behavior: auto;
+}
+
+.people-page .member-index {
+  display: block;
+  margin: 0 0 24px;
+  padding-block: 8px;
+  border-block: 1px solid var(--line);
+}
+
+.people-page .member-index ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
+  gap: 2px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.people-page .member-index a {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding-inline: 6px;
+  overflow-wrap: anywhere;
+}
+
+.people-page:has(#members-power:target, #members-power :target) .member-index a[href="#members-power"],
+.people-page:has(#members-scheduling:target, #members-scheduling :target) .member-index a[href="#members-scheduling"],
+.people-page:has(#members-llm:target, #members-llm :target) .member-index a[href="#members-llm"],
+.people-page:has(#members-ts:target, #members-ts :target) .member-index a[href="#members-ts"],
+.people-page:has(#members-fl:target, #members-fl :target) .member-index a[href="#members-fl"],
+.people-page:has(#former:target, #former :target) .member-index a[href="#former"] {
+  color: var(--accent);
+  background: var(--blue-soft);
+  box-shadow: inset 2px 0 var(--accent);
+  font-weight: 600;
+}
+
+.people-page .faculty-intro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.people-page .faculty-intro > img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.people-page .faculty-intro h3 {
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.people-page .faculty-intro p {
+  margin-bottom: 6px;
+  font-size: .875rem;
+}
+
+.people-page .faculty-intro .paper-links {
+  gap: 6px 14px;
+  font-size: .875rem;
+}
+
+.people-page #by-research,
+.people-page .member-role,
+.people-page .member-entry {
+  position: relative;
+}
+
+.people-page .member-direction {
+  padding-top: 20px;
+  margin-top: 26px;
+}
+
+.people-page #by-research > .member-direction:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.people-page .member-direction h3 {
+  margin: 0;
+  font-size: 1.3125rem;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.people-page .member-direction:target h3 {
+  border-inline-start: 3px solid var(--accent);
+  padding-inline-start: 8px;
+}
+
+.people-page .member-role {
+  margin-top: 14px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid var(--line);
+}
+
+.people-page .member-role h4 {
+  margin: 0 0 3px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.people-page .member-cohorts {
+  margin: 0;
+}
+
+.people-page .member-cohort {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  column-gap: 12px;
+  padding-block: 3px;
+}
+
+.people-page .member-cohort dt {
+  color: var(--muted);
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+
+.people-page .member-cohort dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.people-page .member-names {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 6.5rem), 1fr));
+  gap: 2px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.people-page .member-entry {
+  min-width: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.people-page .member-entry > a {
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+
+.people-page .anchor-target {
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+
+.people-page .member-entry:target,
+.people-page .member-entry:has(> .anchor-target:target) {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+  background: var(--blue-soft);
+}
+
+@media (width > 800px) {
+  .people-page .member-index ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 1280px) and (height >= 600px) {
+  .people-page .page-shell {
+    max-width: 1384px;
+  }
+
+  .people-page.back-to-top-page .page-content {
+    max-width: none;
+    padding-inline-end: 0;
+  }
+
+  .people-page #main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 176px;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 24px;
+  }
+
+  .people-page #main > :not(.member-index) {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  .people-page footer {
+    margin-inline-end: 200px;
+  }
+
+  .people-page .member-index {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    position: sticky;
+    inset-block-start: 42px;
+    align-self: start;
+    padding: 0 0 0 12px;
+    margin: 0;
+    border-block: 0;
+    border-inline-start: 1px solid var(--line);
+  }
+
+  .people-page .member-index ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .people-page .member-index a {
+    min-height: 32px;
+  }
+}
+
+@media (width <= 600px) {
+  .people-page .member-index a {
+    min-height: 44px;
+  }
+
+  .people-page .faculty-intro {
+    gap: 12px;
+  }
+
+  .people-page .faculty-intro > img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .people-page .member-direction h3 {
+    font-size: 1.1875rem;
+  }
+
+  .people-page .member-role {
+    padding-inline-start: 8px;
+  }
+
+  .people-page .member-cohort {
+    grid-template-columns: min(4.75rem, 36%) minmax(0, 1fr);
+    column-gap: 8px;
+  }
+
+  .people-page .member-names {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 5.75rem), 1fr));
+    column-gap: 8px;
+  }
+}

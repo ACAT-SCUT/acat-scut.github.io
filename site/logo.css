@@ -1,0 +1,13 @@
+@media (width >= 1200px) and (740px <= height < 900px) {
+  .sidebar .lab-logo {
+    width: 136px;
+    height: 136px;
+  }
+}
+
+@media (width >= 1200px) and (height >= 900px) {
+  .sidebar .lab-logo {
+    width: 160px;
+    height: 160px;
+  }
+}

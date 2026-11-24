@@ -17,6 +17,7 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.refs, self.ids, self.members = [], [], []
+        self.experiences = []
         self.headings = 0
         self.feed(text)
 
@@ -28,6 +29,10 @@ class Page(HTMLParser):
             self.headings += 1
         if "member-card" in attrs.get("class", "").split():
             self.members.append(attrs.get("id"))
+        if "data-member-id" in attrs:
+            self.members.append(attrs["data-member-id"])
+        if "data-experience-id" in attrs:
+            self.experiences.append(attrs["data-experience-id"])
         for field in ("href", "src"):
             if field in attrs:
                 self.refs.append(attrs[field])
@@ -59,16 +64,23 @@ people = pages.get("people.html")
 if people is None:
     errors.append("missing people.html")
 else:
-    expected = {"member-" + m["id"] for m in data["members"]}
-    if set(people.members) != expected or len(people.members) != len(expected):
-        errors.append("people.html: member cards do not match the source roster exactly")
+    expected = {m["id"] for m in data["memberRecords"]}
+    entries = [exp for exp in data["memberExperiences"] if exp["status"] == "former" or exp["researchIds"]]
+    if set(people.members) != {exp["memberId"] for exp in entries} or any("member-" + mid not in people.ids for mid in expected):
+        errors.append("people.html: member entries or stable anchors do not match the roster")
+    if (set(people.experiences) != {exp["id"] for exp in entries}
+            or any("experience-" + exp["id"] not in people.ids for exp in data["memberExperiences"])):
+        errors.append("people.html: missing experience entry or stable anchor")
     for group in data["research"]:
         if "members-" + group["id"] not in people.ids:
             errors.append("people.html: missing legacy direction anchor " + group["id"])
 publications = pages.get("publications.html")
 if publications is None or any(paper_id(p) not in publications.ids for p in data["papers"]):
     errors.append("publications.html: missing paper anchor")
-for filename in ("index.html", "research.html", "people.html", "publications.html", "404.html"):
+projects = pages.get("projects.html")
+if projects is None or {"vertical", "horizontal", *(p["id"] for p in data["projects"])} - set(projects.ids):
+    errors.append("projects.html: missing project or category anchor")
+for filename in ("index.html", "research.html", "people.html", "publications.html", "projects.html", "404.html"):
     if filename not in pages:
         errors.append("missing " + filename)
     elif "/sources.html" in pages[filename].refs:
@@ -76,7 +88,8 @@ for filename in ("index.html", "research.html", "people.html", "publications.htm
 redirect = SITE / "sources.html"
 if not redirect.exists() or 'content="0;url=/"' not in redirect.read_text(encoding="utf-8"):
     errors.append("sources.html: missing home redirect")
-if "sources.html" in (SITE / "sitemap.xml").read_text(encoding="utf-8"):
-    errors.append("sitemap: sources redirect must not be indexed")
+sitemap = (SITE / "sitemap.xml").read_text(encoding="utf-8")
+if "sources.html" in sitemap or data["meta"]["links"]["baseUrl"] + "projects.html" not in sitemap:
+    errors.append("sitemap: index the projects page and exclude the sources redirect")
 print(json.dumps({"pages": len(pages), "members": len(data["members"]), "errors": errors}, ensure_ascii=False))
 raise SystemExit(bool(errors))

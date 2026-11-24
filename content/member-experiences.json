@@ -1,0 +1,899 @@
+[
+  {
+    "id": "m001-e01",
+    "memberId": "m001",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m002-e01",
+    "memberId": "m002",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2026
+  },
+  {
+    "id": "m003-e01",
+    "memberId": "m003",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2026
+  },
+  {
+    "id": "m004-e01",
+    "memberId": "m004",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m005-e01",
+    "memberId": "m005",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m006-e01",
+    "memberId": "m006",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m007-e01",
+    "memberId": "m007",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "ts"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m008-e01",
+    "memberId": "m008",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m009-e01",
+    "memberId": "m009",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m010-e01",
+    "memberId": "m010",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m011-e01",
+    "memberId": "m011",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m012-e01",
+    "memberId": "m012",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "ts"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m013-e01",
+    "memberId": "m013",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m014-e01",
+    "memberId": "m014",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2026
+  },
+  {
+    "id": "m015-e01",
+    "memberId": "m015",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m016-e01",
+    "memberId": "m016",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2026
+  },
+  {
+    "id": "m017-e01",
+    "memberId": "m017",
+    "role": "postdoc",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "fl"
+    ]
+  },
+  {
+    "id": "m018-e01",
+    "memberId": "m018",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m019-e01",
+    "memberId": "m019",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m020-e01",
+    "memberId": "m020",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m021-e01",
+    "memberId": "m021",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power",
+      "scheduling"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m022-e01",
+    "memberId": "m022",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2025
+  },
+  {
+    "id": "m023-e01",
+    "memberId": "m023",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2025
+  },
+  {
+    "id": "m024-e01",
+    "memberId": "m024",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling",
+      "llm"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m025-e01",
+    "memberId": "m025",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "ts"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m026-e01",
+    "memberId": "m026",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m027-e01",
+    "memberId": "m027",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m028-e01",
+    "memberId": "m028",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "ts"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m029-e01",
+    "memberId": "m029",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m030-e01",
+    "memberId": "m030",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m031-e01",
+    "memberId": "m031",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2025
+  },
+  {
+    "id": "m032-e01",
+    "memberId": "m032",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m033-e01",
+    "memberId": "m033",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m034-e01",
+    "memberId": "m034",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m035-e01",
+    "memberId": "m035",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m036-e01",
+    "memberId": "m036",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2024
+  },
+  {
+    "id": "m037-e01",
+    "memberId": "m037",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m038-e01",
+    "memberId": "m038",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m039-e01",
+    "memberId": "m039",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m040-e01",
+    "memberId": "m040",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "fl"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m041-e01",
+    "memberId": "m041",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2024
+  },
+  {
+    "id": "m042-e01",
+    "memberId": "m042",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2024
+  },
+  {
+    "id": "m043-e01",
+    "memberId": "m043",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2023
+  },
+  {
+    "id": "m044-e01",
+    "memberId": "m044",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "ts"
+    ],
+    "entryYear": 2023
+  },
+  {
+    "id": "m045-e01",
+    "memberId": "m045",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "llm"
+    ],
+    "entryYear": 2023
+  },
+  {
+    "id": "m046-e01",
+    "memberId": "m046",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "power",
+      "llm"
+    ],
+    "entryYear": 2023
+  },
+  {
+    "id": "m047-e01",
+    "memberId": "m047",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m048-e01",
+    "memberId": "m048",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m049-e01",
+    "memberId": "m049",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m050-e01",
+    "memberId": "m050",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m051-e01",
+    "memberId": "m051",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m052-e01",
+    "memberId": "m052",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m053-e01",
+    "memberId": "m053",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m054-e01",
+    "memberId": "m054",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2023
+  },
+  {
+    "id": "m055-e01",
+    "memberId": "m055",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m056-e01",
+    "memberId": "m056",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "fl"
+    ],
+    "entryYear": 2022
+  },
+  {
+    "id": "m057-e01",
+    "memberId": "m057",
+    "role": "phd",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "ts"
+    ],
+    "entryYear": 2022
+  },
+  {
+    "id": "m058-e01",
+    "memberId": "m058",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m059-e01",
+    "memberId": "m059",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m060-e01",
+    "memberId": "m060",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m061-e01",
+    "memberId": "m061",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m062-e01",
+    "memberId": "m062",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": true,
+    "researchIds": [
+      "power"
+    ],
+    "entryYear": 2022
+  },
+  {
+    "id": "m063-e01",
+    "memberId": "m063",
+    "role": "master",
+    "status": "current",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "fl"
+    ],
+    "entryYear": 2022
+  },
+  {
+    "id": "m064-e01",
+    "memberId": "m064",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m065-e01",
+    "memberId": "m065",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2022
+  },
+  {
+    "id": "m066-e01",
+    "memberId": "m066",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": true,
+    "researchIds": [
+      "fl"
+    ],
+    "entryYear": 2022
+  },
+  {
+    "id": "m067-e01",
+    "memberId": "m067",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": true,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2021
+  },
+  {
+    "id": "m068-e01",
+    "memberId": "m068",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m069-e01",
+    "memberId": "m069",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m070-e01",
+    "memberId": "m070",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m071-e01",
+    "memberId": "m071",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m072-e01",
+    "memberId": "m072",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m073-e01",
+    "memberId": "m073",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m074-e01",
+    "memberId": "m074",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m075-e01",
+    "memberId": "m075",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m076-e01",
+    "memberId": "m076",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m077-e01",
+    "memberId": "m077",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2021
+  },
+  {
+    "id": "m078-e01",
+    "memberId": "m078",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2020
+  },
+  {
+    "id": "m079-e01",
+    "memberId": "m079",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2020
+  },
+  {
+    "id": "m080-e01",
+    "memberId": "m080",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2020
+  },
+  {
+    "id": "m081-e01",
+    "memberId": "m081",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2020
+  },
+  {
+    "id": "m082-e01",
+    "memberId": "m082",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2020
+  },
+  {
+    "id": "m083-e01",
+    "memberId": "m083",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2019
+  },
+  {
+    "id": "m084-e01",
+    "memberId": "m084",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": true,
+    "researchIds": [
+      "fl"
+    ],
+    "entryYear": 2019
+  },
+  {
+    "id": "m085-e01",
+    "memberId": "m085",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2019
+  },
+  {
+    "id": "m086-e01",
+    "memberId": "m086",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2019
+  },
+  {
+    "id": "m087-e01",
+    "memberId": "m087",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2019
+  },
+  {
+    "id": "m088-e01",
+    "memberId": "m088",
+    "role": "master",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [],
+    "entryYear": 2019
+  },
+  {
+    "id": "m089-e01",
+    "memberId": "m089",
+    "role": "phd",
+    "status": "former",
+    "graduationConfirmed": false,
+    "researchIds": [
+      "scheduling"
+    ],
+    "entryYear": 2018
+  }
+]

@@ -2,645 +2,557 @@
   {
     "id": "m001",
     "name": "南佳豪",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m001-e01",
+    "sortName": "nan jia hao"
   },
   {
     "id": "m002",
     "name": "陶禹任",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m002-e01",
+    "sortName": "tao yu ren"
   },
   {
     "id": "m003",
     "name": "张慕雪",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m003-e01",
+    "sortName": "zhang mu xue"
   },
   {
     "id": "m004",
     "name": "王丽",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m004-e01",
+    "sortName": "wang li"
   },
   {
     "id": "m005",
     "name": "李东阳",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m005-e01",
+    "sortName": "li dong yang"
   },
   {
     "id": "m006",
     "name": "徐思尧",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m006-e01",
+    "sortName": "xu si yao"
   },
   {
     "id": "m007",
     "name": "胡靖",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m007-e01",
+    "sortName": "hu jing"
   },
   {
     "id": "m008",
     "name": "谭陈煜",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m008-e01",
+    "sortName": "tan chen yu"
   },
   {
     "id": "m009",
     "name": "李维东",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m009-e01",
+    "sortName": "li wei dong"
   },
   {
     "id": "m010",
     "name": "张文",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m010-e01",
+    "sortName": "zhang wen"
   },
   {
     "id": "m011",
     "name": "张耿兵",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m011-e01",
+    "sortName": "zhang geng bing"
   },
   {
     "id": "m012",
     "name": "孙家政",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m012-e01",
+    "sortName": "sun jia zheng"
   },
   {
     "id": "m013",
     "name": "张志鹏",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m013-e01",
+    "sortName": "zhang zhi peng"
   },
   {
     "id": "m014",
     "name": "吕书涵",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m014-e01",
+    "sortName": "lu shu han"
   },
   {
     "id": "m015",
     "name": "徐尔羚",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m015-e01",
+    "sortName": "xu er ling"
   },
   {
     "id": "m016",
     "name": "刘泱",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2026
+    "displayExperienceId": "m016-e01",
+    "sortName": "liu yang"
   },
   {
     "id": "m017",
     "name": "李董东",
-    "role": "postdoc",
-    "status": "former"
+    "displayExperienceId": "m017-e01",
+    "sortName": "li dong dong"
   },
   {
     "id": "m018",
     "name": "李孟恒",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2025,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/limengheng.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/limengheng.md",
+    "displayExperienceId": "m018-e01",
+    "sortName": "li meng heng"
   },
   {
     "id": "m019",
     "name": "吴海杰",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2025,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/wuhaijie.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/wuhaijie.md",
+    "displayExperienceId": "m019-e01",
+    "sortName": "wu hai jie"
   },
   {
     "id": "m020",
     "name": "熊潼",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2025,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/xiongtong.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/xiongtong.md",
+    "displayExperienceId": "m020-e01",
+    "sortName": "xiong tong"
   },
   {
     "id": "m021",
     "name": "叶晓明",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2025,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/yexiaoming.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/yexiaoming.md",
+    "displayExperienceId": "m021-e01",
+    "sortName": "ye xiao ming"
   },
   {
     "id": "m022",
     "name": "沈文轩",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2025,
-    "url": "https://p114514-new.github.io/"
+    "url": "https://p114514-new.github.io/",
+    "displayExperienceId": "m022-e01",
+    "sortName": "shen wen xuan"
   },
   {
     "id": "m023",
     "name": "陈云风",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m023-e01",
+    "sortName": "chen yun feng"
   },
   {
     "id": "m024",
     "name": "姚子毅",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m024-e01",
+    "sortName": "yao zi yi"
   },
   {
     "id": "m025",
     "name": "温文浩",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m025-e01",
+    "sortName": "wen wen hao"
   },
   {
     "id": "m026",
     "name": "徐浩恩",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m026-e01",
+    "sortName": "xu hao en"
   },
   {
     "id": "m027",
     "name": "袁振东",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m027-e01",
+    "sortName": "yuan zhen dong"
   },
   {
     "id": "m028",
     "name": "邱椿雲",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m028-e01",
+    "sortName": "qiu chun yun"
   },
   {
     "id": "m029",
     "name": "李卓兴",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m029-e01",
+    "sortName": "li zhuo xing"
   },
   {
     "id": "m030",
     "name": "李昱",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m030-e01",
+    "sortName": "li yu"
   },
   {
     "id": "m031",
     "name": "李俊淇",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2025
+    "displayExperienceId": "m031-e01",
+    "sortName": "li jun qi"
   },
   {
     "id": "m032",
     "name": "牟奇",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2024,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/muqi.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/muqi.md",
+    "displayExperienceId": "m032-e01",
+    "sortName": "mou qi"
   },
   {
     "id": "m033",
     "name": "陈冠宇",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2024,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/chenguanyu.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/chenguanyu.md",
+    "displayExperienceId": "m033-e01",
+    "sortName": "chen guan yu"
   },
   {
     "id": "m034",
     "name": "黄悦斌",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2024,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/huangyuebin.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/huangyuebin.md",
+    "displayExperienceId": "m034-e01",
+    "sortName": "huang yue bin"
   },
   {
     "id": "m035",
     "name": "钟浩城",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2024,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/zhonghaocheng.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/zhonghaocheng.md",
+    "displayExperienceId": "m035-e01",
+    "sortName": "zhong hao cheng"
   },
   {
     "id": "m036",
     "name": "李昊",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m036-e01",
+    "sortName": "li hao"
   },
   {
     "id": "m037",
     "name": "吴凯敏",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m037-e01",
+    "sortName": "wu kai min"
   },
   {
     "id": "m038",
     "name": "吴姿娴",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m038-e01",
+    "sortName": "wu zi xian"
   },
   {
     "id": "m039",
     "name": "雷富凯",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m039-e01",
+    "sortName": "lei fu kai"
   },
   {
     "id": "m040",
     "name": "吴陈洁婷",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m040-e01",
+    "sortName": "wu chen jie ting"
   },
   {
     "id": "m041",
     "name": "尹浩朗",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m041-e01",
+    "sortName": "yin hao lang"
   },
   {
     "id": "m042",
     "name": "鄢志宇",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2024
+    "displayExperienceId": "m042-e01",
+    "sortName": "yan zhi yu"
   },
   {
     "id": "m043",
     "name": "刘国志",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2023,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/liuguozhi.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/liuguozhi.md",
+    "displayExperienceId": "m043-e01",
+    "sortName": "liu guo zhi"
   },
   {
     "id": "m044",
     "name": "林升升",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2023,
-    "url": "https://lss-1138.github.io/"
+    "url": "https://lss-1138.github.io/",
+    "displayExperienceId": "m044-e01",
+    "sortName": "lin sheng sheng"
   },
   {
     "id": "m045",
     "name": "李胜海",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2023,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/lishenghai.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/lishenghai.md",
+    "displayExperienceId": "m045-e01",
+    "sortName": "li sheng hai"
   },
   {
     "id": "m046",
     "name": "黄嘉华",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2023,
-    "url": "https://dadiaokua.github.io"
+    "url": "https://dadiaokua.github.io",
+    "displayExperienceId": "m046-e01",
+    "sortName": "huang jia hua"
   },
   {
     "id": "m047",
     "name": "吴纪宽",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m047-e01",
+    "sortName": "wu ji kuan"
   },
   {
     "id": "m048",
     "name": "邱鸿楷",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m048-e01",
+    "sortName": "qiu hong kai"
   },
   {
     "id": "m049",
     "name": "陈泊圻",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m049-e01",
+    "sortName": "chen po qi"
   },
   {
     "id": "m050",
     "name": "林锦辉",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m050-e01",
+    "sortName": "lin jin hui"
   },
   {
     "id": "m051",
     "name": "陈浩钧",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m051-e01",
+    "sortName": "chen hao jun"
   },
   {
     "id": "m052",
     "name": "庄梓龙",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m052-e01",
+    "sortName": "zhuang zi long"
   },
   {
     "id": "m053",
     "name": "肖亦灯",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m053-e01",
+    "sortName": "xiao yi deng"
   },
   {
     "id": "m054",
     "name": "卢沂康",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2023
+    "displayExperienceId": "m054-e01",
+    "sortName": "lu yi kang"
   },
   {
     "id": "m055",
     "name": "罗潇轩",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2022,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/luoxiaoxuan.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/luoxiaoxuan.md",
+    "displayExperienceId": "m055-e01",
+    "sortName": "luo xiao xuan"
   },
   {
     "id": "m056",
     "name": "彭鹏",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2022,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/pengpeng.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/pengpeng.md",
+    "displayExperienceId": "m056-e01",
+    "sortName": "peng peng"
   },
   {
     "id": "m057",
     "name": "胡正阳",
-    "role": "phd",
-    "status": "current",
-    "entryYear": 2022,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/huzhengyang.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/huzhengyang.md",
+    "displayExperienceId": "m057-e01",
+    "sortName": "hu zheng yang"
   },
   {
     "id": "m058",
     "name": "莫瑞超",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2022,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/moruichao.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/moruichao.md",
+    "displayExperienceId": "m058-e01",
+    "sortName": "mo rui chao"
   },
   {
     "id": "m059",
     "name": "李志豪",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m059-e01",
+    "sortName": "li zhi hao"
   },
   {
     "id": "m060",
     "name": "陈锐",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m060-e01",
+    "sortName": "chen rui"
   },
   {
     "id": "m061",
     "name": "林文俊",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m061-e01",
+    "sortName": "lin wen jun"
   },
   {
     "id": "m062",
     "name": "赵飞雨",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m062-e01",
+    "sortName": "zhao fei yu"
   },
   {
     "id": "m063",
     "name": "周智勇",
-    "role": "master",
-    "status": "current",
-    "entryYear": 2022
+    "displayExperienceId": "m063-e01",
+    "sortName": "zhou zhi yong"
   },
   {
     "id": "m064",
     "name": "陈帆",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m064-e01",
+    "sortName": "chen fan"
   },
   {
     "id": "m065",
     "name": "林泓睿",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m065-e01",
+    "sortName": "lin hong rui"
   },
   {
     "id": "m066",
     "name": "曾华玥",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2022
+    "displayExperienceId": "m066-e01",
+    "sortName": "ceng hua yue"
   },
   {
     "id": "m067",
     "name": "王新华",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2021,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/wangxinhua.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/wangxinhua.md",
+    "displayExperienceId": "m067-e01",
+    "sortName": "wang xin hua"
   },
   {
     "id": "m068",
     "name": "林建鹏",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m068-e01",
+    "sortName": "lin jian peng"
   },
   {
     "id": "m069",
     "name": "黄惠康",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2021,
-    "url": "https://wellcome0321.github.io"
+    "url": "https://wellcome0321.github.io",
+    "displayExperienceId": "m069-e01",
+    "sortName": "huang hui kang"
   },
   {
     "id": "m070",
     "name": "王松波",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m070-e01",
+    "sortName": "wang song bo"
   },
   {
     "id": "m071",
     "name": "胡智超",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m071-e01",
+    "sortName": "hu zhi chao"
   },
   {
     "id": "m072",
     "name": "梁杰超",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m072-e01",
+    "sortName": "liang jie chao"
   },
   {
     "id": "m073",
     "name": "许皓钧",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m073-e01",
+    "sortName": "xu hao jun"
   },
   {
     "id": "m074",
     "name": "金育妍",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m074-e01",
+    "sortName": "jin yu yan"
   },
   {
     "id": "m075",
     "name": "曾梓楠",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m075-e01",
+    "sortName": "ceng zi nan"
   },
   {
     "id": "m076",
     "name": "汤元丰",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m076-e01",
+    "sortName": "tang yuan feng"
   },
   {
     "id": "m077",
     "name": "吴国楷",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2021
+    "displayExperienceId": "m077-e01",
+    "sortName": "wu guo kai"
   },
   {
     "id": "m078",
     "name": "沈王博",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2020
+    "displayExperienceId": "m078-e01",
+    "sortName": "shen wang bo"
   },
   {
     "id": "m079",
     "name": "熊辰念",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2020,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/xiongchennian.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/xiongchennian.md",
+    "displayExperienceId": "m079-e01",
+    "sortName": "xiong chen nian"
   },
   {
     "id": "m080",
     "name": "许银海",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2020
+    "displayExperienceId": "m080-e01",
+    "sortName": "xu yin hai"
   },
   {
     "id": "m081",
     "name": "吴伟正",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2020
+    "displayExperienceId": "m081-e01",
+    "sortName": "wu wei zheng"
   },
   {
     "id": "m082",
     "name": "李俊祺",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2020
+    "displayExperienceId": "m082-e01",
+    "sortName": "li jun qi"
   },
   {
     "id": "m083",
     "name": "石方",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2019
+    "displayExperienceId": "m083-e01",
+    "sortName": "shi fang"
   },
   {
     "id": "m084",
     "name": "张皓同",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2019,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/zhanghaotong.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/zhanghaotong.md",
+    "displayExperienceId": "m084-e01",
+    "sortName": "zhang hao tong"
   },
   {
     "id": "m085",
     "name": "王永祥",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2019
+    "displayExperienceId": "m085-e01",
+    "sortName": "wang yong xiang"
   },
   {
     "id": "m086",
     "name": "李庆宇",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2019
+    "displayExperienceId": "m086-e01",
+    "sortName": "li qing yu"
   },
   {
     "id": "m087",
     "name": "张懿",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2019
+    "displayExperienceId": "m087-e01",
+    "sortName": "zhang yi"
   },
   {
     "id": "m088",
     "name": "赖龙波",
-    "role": "master",
-    "status": "former",
-    "entryYear": 2019
+    "displayExperienceId": "m088-e01",
+    "sortName": "lai long bo"
   },
   {
     "id": "m089",
     "name": "利建卓",
-    "role": "phd",
-    "status": "former",
-    "entryYear": 2018,
-    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/lijianzhuo.md"
+    "url": "https://github.com/ACAT-SCUT/.github/blob/main/profile/students/lijianzhuo.md",
+    "displayExperienceId": "m089-e01",
+    "sortName": "li jian zhuo"
   }
 ]

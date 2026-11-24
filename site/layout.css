@@ -1,0 +1,72 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+.page-shell {
+  max-width: 1384px;
+}
+
+.page-rail .rail-title {
+  display: none;
+}
+
+@media (width >= 1280px) and (height >= 600px) {
+  :is(.publication-page, .people-page) #main {
+    --rail-width: 176px;
+    --rail-gap: 24px;
+    grid-template-columns: minmax(0, 1fr) var(--rail-width);
+    column-gap: var(--rail-gap);
+  }
+
+  :is(.publication-page, .people-page) .page-rail {
+    position: sticky;
+    inset-block-start: 42px;
+    box-sizing: border-box;
+    max-block-size: calc(100dvh - 106px);
+    overflow-y: auto;
+    margin: 0;
+    padding: 0 4px 4px 12px;
+    border: 0;
+    border-inline-start: 1px solid var(--line);
+    color: var(--text);
+    font-size: .8125rem;
+    line-height: 1.5;
+  }
+
+  .page-rail .rail-title {
+    display: block;
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .page-rail :is(summary, ul > li > a) {
+    border-radius: 3px;
+    overflow-wrap: anywhere;
+  }
+
+  .page-rail summary,
+  .people-page .page-rail > ul > li > a {
+    box-sizing: border-box;
+    min-block-size: 32px;
+    padding: 6px 8px;
+    font-weight: 600;
+  }
+
+  .page-rail :is(a, summary):hover {
+    background: #eef2f6;
+  }
+
+  .page-rail :is(a, summary):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+
+  :is(.publication-page, .people-page) .page-rail [aria-current="location"] {
+    background: var(--blue-soft);
+    box-shadow: inset 2px 0 var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+}

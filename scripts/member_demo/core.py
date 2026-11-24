@@ -69,8 +69,9 @@ def valid_url(value):
     return value
 
 
-def valid_directions(value):
-    if not isinstance(value, list) or any(not isinstance(x, str) or x not in DIRECTION_MAP for x in value):
+def valid_directions(value, directions=None):
+    allowed = {item["id"] for item in directions} if directions is not None else DIRECTION_MAP
+    if not isinstance(value, list) or any(not isinstance(x, str) or x not in allowed for x in value):
         raise DemoError("请选择已有的研究方向")
     if len(value) != len(set(value)):
         raise DemoError("研究方向不能重复")
@@ -93,14 +94,14 @@ def validate_registry(state):
         if experience["memberId"] not in mids or experience["role"] not in ROLES:
             raise DemoError("经历中的人员或身份不正确")
         valid_year(experience.get("entryYear"), experience["role"] != "postdoc")
-        valid_directions(experience["researchIds"])
+        valid_directions(experience["researchIds"], state.get("directions"))
         if experience["status"] not in ("current", "former") or type(experience["graduationConfirmed"]) is not bool:
             raise DemoError("经历状态不正确")
         if experience["graduationConfirmed"] and (experience["role"] == "postdoc" or experience["status"] != "former"):
             raise DemoError("毕业确认仅适用于已结束的硕博经历")
 
 
-def normalize_request(payload):
+def normalize_request(payload, directions=None):
     if not isinstance(payload, dict):
         raise DemoError("申请内容格式不正确")
     allowed = {"kind", "name", "role", "entryYear", "researchIds", "url", "changes", "clearFields", "graduationAcknowledged"}
@@ -118,7 +119,7 @@ def normalize_request(payload):
             raise DemoError("请确认申请的是这段经历的毕业状态")
         result["graduationAcknowledged"] = True
     elif kind == "add":
-        result["researchIds"] = valid_directions(payload.get("researchIds", []))
+        result["researchIds"] = valid_directions(payload.get("researchIds", []), directions)
         result["url"] = valid_url(payload.get("url", ""))
     else:
         changes = payload.get("changes", {})
@@ -145,7 +146,7 @@ def normalize_request(payload):
             elif key == "entryYear":
                 normalized[key] = valid_year(value)
             else:
-                normalized[key] = valid_directions(value)
+                normalized[key] = valid_directions(value, directions)
         if not normalized and not clears:
             raise DemoError("请填写至少一项修改内容；空白会保留原值")
         result.update(changes=normalized, clearFields=clears)
@@ -191,7 +192,7 @@ def choose_target(state, request, target):
     raise DemoError("无法唯一匹配，请由维护者明确选择人员与经历")
 
 
-def display_value(field, value):
+def display_value(field, value, directions=None):
     if value is None or value == "":
         return "未填写"
     if field == "role":
@@ -201,7 +202,8 @@ def display_value(field, value):
     if field == "graduationConfirmed":
         return "已确认毕业" if value else "未确认毕业"
     if field == "researchIds":
-        return "、".join(DIRECTION_MAP[x] for x in value) or "未归属方向"
+        names = {item["id"]: item["title"] for item in directions} if directions is not None else DIRECTION_MAP
+        return "、".join(names[x] for x in value) or "未归属方向"
     return str(value)
 
 
@@ -219,11 +221,11 @@ def propose(state, request):
     before_experience = None
     if kind == "add":
         if member is None:
-            member = {"id": new_id(updated["members"], "demo-person"), "name": payload["name"]}
+            member = {"id": new_id(updated["members"], state.get("idPrefixes", {}).get("members", "demo-person")), "name": payload["name"]}
             updated["members"].append(member)
         if any(e["memberId"] == member["id"] and e["role"] == payload["role"] and e.get("entryYear") == payload["entryYear"] for e in updated["experiences"]):
             raise DemoError("该成员已有同身份、同年份的经历，请使用修改资料")
-        experience = {"id": new_id(updated["experiences"], "demo-exp"), "memberId": member["id"], "role": payload["role"], "status": "current", "graduationConfirmed": False, "researchIds": payload["researchIds"]}
+        experience = {"id": new_id(updated["experiences"], state.get("idPrefixes", {}).get("experiences", "demo-exp")), "memberId": member["id"], "role": payload["role"], "status": "current", "graduationConfirmed": False, "researchIds": payload["researchIds"]}
         if payload["entryYear"] is not None:
             experience["entryYear"] = payload["entryYear"]
         if payload.get("url"):
@@ -240,6 +242,8 @@ def propose(state, request):
             experience.update(status="former", graduationConfirmed=True)
         else:
             for key, value in payload["changes"].items():
+                if key == "name" and value != member["name"]:
+                    member.pop("sortName", None)
                 (member if key in ("name", "url") else experience)[key] = value
             for key in payload["clearFields"]:
                 if key == "researchIds":
@@ -255,7 +259,7 @@ def propose(state, request):
     ):
         for field in fields:
             if before.get(field) != after.get(field):
-                changes.append({"scope": scope, "field": field, "label": labels[field], "before": display_value(field, before.get(field)), "after": display_value(field, after.get(field))})
+                changes.append({"scope": scope, "field": field, "label": labels[field], "before": display_value(field, before.get(field), state.get("directions")), "after": display_value(field, after.get(field), state.get("directions"))})
     if not changes:
         raise DemoError("申请内容与现有资料一致，无需应用")
     return updated, changes
@@ -380,14 +384,14 @@ class Store:
     def export_csv(self, reviewed=False):
         state = self.read()
         out = io.StringIO(newline="")
-        headers = ["申请编号", "申请类型", "姓名", "定位身份", "定位年份", "申请内容", "提交时间"]
+        headers = ["申请编号", "申请类型", "姓名", "定位身份", "定位年份", "申请内容", "提交时间", "数据用途"]
         if reviewed:
             headers += ["审核结果", "匹配人员编号", "匹配经历编号", "审核备注", "应用时间"]
         writer = csv.writer(out, lineterminator="\n")
         writer.writerow(headers)
         for request in state["requests"]:
             p = request["payload"]
-            row = [request["id"], KINDS[p["kind"]], p["name"], ROLES[p["role"]], p.get("entryYear") or "", json.dumps(p, ensure_ascii=False), request["submittedAt"]]
+            row = [request["id"], KINDS[p["kind"]], p["name"], ROLES[p["role"]], p.get("entryYear") or "", json.dumps(p, ensure_ascii=False), request["submittedAt"], "演示"]
             if reviewed:
                 target = request.get("target") or {}
                 row += [REVIEWS[request["review"]], target.get("memberId", ""), target.get("experienceId", ""), request["reviewNote"], request.get("appliedAt", "")]

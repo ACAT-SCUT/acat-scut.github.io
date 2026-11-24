@@ -1,63 +1,75 @@
 # 数据维护与填写说明
 
-[项目指南](../README.md) · [建设需求](../ROADMAP.md) · [成员 CSV 模板](templates/members.csv)
+[项目指南](../README.md) · [建设需求](../ROADMAP.md) · [变更申请 CSV 模板](templates/member-requests.csv)
 
 ## 数据分工
 
-六份 JSON 是公开内容的唯一维护来源。`scripts/content.py` 统一读取并验证，构建不抓取外部数据、不改变核查日期。以下字段列出了当前全部维护接口；只读派生内容无需手填。
+六类业务内容分为七份 JSON，是公开内容的唯一维护来源。`scripts/content.py` 统一读取并验证，构建不抓取外部数据、不改变核查日期。以下字段列出了当前全部维护接口；只读派生内容无需手填。
 
 | 文件 | 必填字段 | 可选字段及说明 | 维护者 |
 |---|---|---|---|
 | `team.json` | `contentUpdated`、`description`、`about`、`lead`、`contact`、`achievements`、`identity`、`links`、`copy` | 各子对象见下表；荣誉允许空数组 | 团队指定维护者 |
-| `research.json` | 每行 `id`、`title`、`short`、`en`、`summary`、`topics`、`memberIds`、`examples`、`source` | `source` 是公开学习资源链接；成员和例子允许空数组 | 方向负责人建议，维护者审核 |
-| `members.json` | 每行 `id`、`name`、`role`、`status`；硕博须有 `entryYear` | `url` 为 HTTPS 主页；博士后可省略 `entryYear` | 学生自填，维护者审核 |
-| `papers.json` | 每行 `id`、`name`、`title`、`authors`、`venue`、`year`、`area`、`summary`、`url` | `short` 简称、`code` 代码地址、`codeVisibility`（默认 `public`，私有填 `private`）、`figure` 方法图路径、`publicationDetails` 正式出版补充信息 | 作者或方向负责人建议，维护者审核 |
-| `projects.json` | 每行 `id`、`title`、`period`、`note` | `url`：可公开的 HTTPS 项目页；无链接时不显示按钮 | 项目相关人员提供，维护者审核 |
-| `homepage.json` | `featured`、`updates`、`recognition` | 允许空数组；首页推荐完全由人工选取 | 团队指定维护者 |
+| `research.json` | 每行 `id`、`title`、`short`、`en`、`summary`、`topics`、`memberOrder`、`examples`、`source` | `source` 是公开学习资源链接；`memberOrder` 供旧接口排序，归属由经历表生成；例子允许空数组 | 方向负责人建议，维护者审核 |
+| `members.json` | 每行 `id`、`name`、`displayExperienceId` | `url` 为 HTTPS 主页，`sortName` 为小写、按音节用空格分隔的拼音排序键；姓名及主页由所有经历共用 | 学生申请，维护者审核 |
+| `member-experiences.json` | 每行 `id`、`memberId`、`role`、`status`、`graduationConfirmed`、`researchIds`；硕博须有 `entryYear` | 博士后的 `entryYear` 为入站年，可省略；一段经历一条，方向归属只在本表维护 | 学生申请，维护者审核 |
+| `papers.json` | 每行 `id`、`name`、`title`、`authors`、`venue`、`year`、`area`、`summary`、`url` | `short` 简称、`code` 代码地址、`codeVisibility`（默认 `public`，私有填 `private`）、`figure` 方法图路径、`publicationDetails` 正式出版补充信息、`correspondingAuthors` 已确认的通讯作者姓名数组 | 作者或方向负责人建议，维护者审核 |
+| `projects.json` | 每行 `id`、`title`、`category`（`vertical`／`horizontal`） | `funding` 资助或合作信息，`period` 起止年月（`YYYY.MM—YYYY.MM`），`start` 供缺完整区间时排序，`url` 公开项目页 | 项目相关人员提供，维护者审核 |
+| `homepage.json` | `year`、`featured`、`updates`、`legacyPaperAnchors` | 列表允许为空；首页条目由人工选取 | 团队指定维护者 |
 
 `team.json` 子对象：
 
 | 子对象 | 字段与用途 |
 |---|---|
-| `identity` | `shortName`、`suffix`、`name`、`englishName`、`affiliation`（按行文本数组）、`location`、`logo`（相对 site 路径）、`copyrightYear` |
+| `identity` | `shortName`、`suffix`、`name`、`englishName`、`affiliation`（按行文本数组）、`location`、`logo`（favicon）、`sidebarLogo`（侧栏透明图）、`copyrightYear` |
 | `lead` | `name`、`englishName`、`url`、`title`、`photo`、`position`、`affiliations`、`interests`、`honor`、`sidebarPosition`、`bioAfterName`（姓名链接后的简介片段） |
 | `contact` | `email`、`address`、`admissionsUrl`、`intro`（欢迎语片段）、`admissionsNote` |
-| `links` | `baseUrl`（站点绝对根地址，末尾 `/`）、`organization`、`scholar`、`college` |
+| `links` | `baseUrl`（站点绝对根地址，末尾 `/`）、`organization`（GitHub 组织）、`scholar`（负责人学术主页）、`college`（负责人学院个人主页） |
 | `achievements` | 荣誉列表，每项 `title`、`text`；团队与个人荣誉不混用 |
-| `copy` | `researchDescription`、`peopleDescription`、`publicationsDescription`、`formerNote`、`projectSourceLabel`、`projectNote`，供现有页面复用 |
+| `copy` | `publicationsDescription`（论文页首简介） |
 
 片段是 `[{"text": "文字"}, {"text": "重点", "tag": "strong"}]`，`tag` 只可省略或为 `strong`／`b`，不填写 HTML。模板负责转义和排版。
 
-`homepage.json`：`featured` 是论文 ID 数组；`updates` 每项为 `paper` 和人工撰写的 `summary`；`recognition` 每项为 `paper` 和片段数组 `label`。三者只引用论文，不重复维护书目。方向页的 `examples` 同样引用论文 ID。
+首页的 `featured` 和 `updates` 均通过 `paper` 引用论文，可按需填 `label`、`format`、`url`。动态还须填写 `date`（`YYYY-MM` 或 `YYYY-MM-DD`），按所选 `year` 的日期倒序展示，最多五条。代表性成果按录入顺序展示。已对外使用的首页论文锚点保存在 `legacyPaperAnchors`，更换精选时仍可直达。
 
 ## ID、关系与人工判断
 
-- 现有成员 `m001` 等和方向 `power`、`scheduling`、`llm`、`ts`、`fl` 的 ID 不变。新增成员由维护者分配未使用的 ID；姓名不是主键，允许同名。
-- 论文 ID 为已固定的页面锚点，如 `paper-sparsetsf-2026`。新增论文由维护者分配唯一的 `paper-` 开头 ID；改题名或年份时不改 ID。会议与期刊扩展版分别建记录。
-- 项目使用独立 ID，如 `project-001`；数组顺序决定同年论文、方向及项目的展示顺序。
-- 成员归属只保存在 `research[].memberIds`，允许跨方向和暂未归属。成员页反向索引由此生成；导入器把填写的方向 ID 转换为这份关系，不在成员表复制。
-- `role` 为 `postdoc`／`phd`／`master`；`status` 为 `current`／`former`。往届不等于取得学位；身份和状态由人审核，不按年级自动推断。
-- `contentUpdated` 是本次公开内容实际修改日，由维护者更新，不是全站资料核实日。导入和构建不会自动改它。
-- 页面内计数、分组、关联、站点地图和样式缓存版本自动生成。论文级别、公开状态、项目进展和首页推荐由人工决定。
+- 人员 ID（如 `m001`）和原 `member-m001` 页面锚点保持不变，姓名不是主键，允许同名。新增人员由工具分配 `member-` 开头的唯一 ID。
+- 一人多段经历，经历通过 `memberId` 指向人员。迁移经历为 `m001-e01` 等，新经历分配 `experience-` 开头 ID；新增经历不会覆盖历史经历或自动切换主经历。
+- `displayExperienceId` 指向该人的主经历，用于保留历史人员锚点和旧数据接口；维护者可在核对后直接调整该引用，学生不填写。
+- `role` 为 `postdoc`／`phd`／`master`；`entryYear` 为完整四位年份。硕博表示入学年，博士后表示入站年；不知道博士后入站年时不补造。
+- `status` 为 `current`／`former`；`graduationConfirmed` 为布尔值。只有明确毕业并经审核的硕博经历才设为 `true`，同时为 `former`；`false` 表示尚未确认，不能理解为未毕业。博士后不能标记毕业。
+- 研究归属只维护在经历的 `researchIds`，允许跨方向、暂未归属，毕业后保留这段经历的方向。研究表 `memberOrder` 供旧接口排序，名单的方向归属由经历决定。
+- 成员页按方向展示当前经历，往届经历集中展示。未归方向的当前经历保留稳定锚点。分组内按身份、年份和姓名排序。有中文姓名新增或更正时，维护者可在人员表补填 `sortName`（例如 `lin wei wei`）。缺值时沿用姓名排序。
+- 论文 ID 为固定锚点，如 `paper-sparsetsf-2026`。改题名或年份不改 ID，会议与期刊扩展版分别维护。方向、项目 ID 同样保持稳定。
+- `contentUpdated` 是实际公开内容修改日，由维护者维护。导入不自动改日期、构建或发布；页面计数、分组、链接及站点地图由构建生成。
+
+## 展示字段设计与当前接口
+
+- 项目按已核实的 `category` 分组，组内按起始年月倒序、同月按 ID 排序。已确认完整公开区间时填 `period`，仅确认起始年月时可用 `start` 排序。
+- 论文 `year` 和 `publicationDetails` 用于书目。与论文相关的荣誉动态引用原论文 ID，使用独立的动态日期和公开新闻链接。
 
 ## 学生填写与审核导入
 
-将空白 CSV 模板复制到 `.local/成员维护/`，也可将表头导入共享云表格，成员各填自己的一行。当前不绑定任何云服务，访问权限由团队管理。填写结果不放进 `content/` 或公开仓库。
+学生通过简短表单提出新增、修改或毕业申请；维护者在导出结果中逐行标记“通过／待核对／退回”。目前提供平台无关 CSV，尚未接入云服务；权限由以后选定的平台配置。填写结果、审核表和备份放 `.local/成员维护/`，不进入公开仓库。
 
-| CSV 列 | 填写规则 |
+空白模板只有表头，允许仅提供本次需要的列：
+
+| CSV 列 | 用途 |
 |---|---|
-| `action` | 修改现有人填 `update`（空白也按 update）；新增必须明确填 `add` |
-| `id` | 必填，由维护者提供；拼错的未知 ID 不会自动新增 |
-| `name` | 姓名；新增必填，修改时空白保留原值 |
-| `role` | `postdoc`／`phd`／`master`，新增必填 |
-| `status` | `current`／`former`，新增必填，维护者审核 |
-| `entryYear` | 四位入学年级整数，硕博必填；不填离组日期 |
-| `url` | 自愿填写的公开 HTTPS 个人主页 |
-| `researchIds` | 建议方向 ID，多个用英文分号分隔，如 `power;ts`；维护者审核 |
+| `申请编号` | 可由收集服务提供，跨批次须唯一；为空时由申请内容和匹配目标生成稳定标识 |
+| `申请类型` | `新增经历`、`修改资料`、`申请毕业`（也接受 add／update／graduate） |
+| `姓名`、`身份`、`入学年份` | 定位成员与经历；身份可用中文或 postdoc／phd／master，年份用四位整数；博士后可暂缺 |
+| `研究方向`、`个人主页` | 新增经历时填写；方向支持 ID 或完整中文名，多项用英文分号分隔，主页仅接受 HTTPS |
+| `修改字段`、`新值` | 修改资料时填写；字段为姓名、个人主页、身份、入学年份或研究方向。身份修改仅用于纠错，升学应新增经历 |
+| `明确清空` | 填“是”才清空主页、方向或博士后年份；空白不覆盖，不允许清空硕博年份或姓名 |
+| `确认毕业` | 申请毕业时明确填“是”，仅作用于定位到的那段硕博经历 |
+| `审核结果` | 明确填写“通过”才进入预览；其他值及空白均跳过 |
+| `匹配人员编号`、`匹配经历编号` | 维护者填写，唯一匹配时可留空；有歧义时必须选择。新增同名但不同的人时，人员编号明确填 `new` |
+| `审核备注` | 维护者可填，仅存本地日志，不写入正式 JSON |
 
-只需提供 `id` 及要修改的列；模板完整表头可直接使用。空白单元格保留原值；缺失行保留整条记录。`__CLEAR__` 仅用于明确清空主页、博士后年级或全部方向关系；不能清空姓名、身份、状态或硕博年级。方向一旦填写，将替换该成员的全部方向关系，不是追加。
+同一人的姓名和主页变化会由全部经历共用；方向、年级和毕业确认属于单段经历。缺失申请行不删除人员。重复编号、错误引用、歧义、冲突或非法的通过项会停止整批处理，不部分写入。空白修改和已符合现状的申请会跳过并说明原因。
 
-从共享表格导出 UTF-8 CSV（允许 BOM）。审核差异后先预览，再应用：
+维护者先预览，再显式应用同一份 CSV：
 
 ```sh
 python -B -X utf8 scripts/import_members.py .local/成员维护/已审核.csv
@@ -67,12 +79,22 @@ python -B -X utf8 scripts/check.py
 python -B -X utf8 -m unittest discover -s scripts -p "test_*.py"
 ```
 
-预览不写文件；重复 ID、未知方向、错误字段或不完整新增会使整批导入失败。应用仅修改成员表和方向关系，保持未涉及成员及既有关系顺序，不会更新日期、构建、提交或发布。保留审核 CSV；如果需要撤回未提交的导入，先保留当前数据，再按预览差异恢复对应字段，避免用整文件回退覆盖他人的修改。
+预览只保存本地回执，不修改正式数据。应用会检查 CSV 和数据是否仍与预览一致；变化后需重新预览。成功应用的申请写入本地台账，重复导入会跳过；同一编号改成不同申请会报错。同一数据目录的维护命令串行执行，写入前会保存备份，普通写入失败恢复原文件；进程中断的未完成事务在下次维护命令启动时恢复。
 
-在临时数据副本验证时可使用 `--content-dir .local/成员维护/测试数据`。导入器会拒绝读取期间已被其他修改改变的成员或方向数据；请避免两位维护者同时应用导入。
+应用结果返回 `batchId`。需要撤回且该批次后没有其他数据变化时：
+
+```sh
+python -B -X utf8 scripts/import_members.py --restore 返回的批次编号
+python -B -X utf8 scripts/build.py
+python -B -X utf8 scripts/check.py
+```
+
+恢复检查文件哈希，拒绝覆盖后续修改；备份和日志位于 `.local/member-maintenance/`。恢复不会自动构建或发布。演示 CSV 带有“演示”用途或 demo 编号，正式工具会拒绝应用。旧单身份成员 CSV 不再直接写入，请转换为新申请模板。
+
+测试时使用 `--content-dir .local/成员维护/测试数据`，仅允许本项目正式内容目录或 `.local/` 中的数据副本。未来收集服务可以映射到上述简短列，或输出结构化 `申请内容` JSON；后者必须符合相同申请校验规则。
 
 ## 公开边界
 
-六份 JSON、空白模板和本说明均为公开仓库内容。仅填写展示所需的公开信息；原始名单、私人联系方式、离组日期及原因、审核答复、来源差异与核查备注放 `.local/` 或本地资料台账。内部核查材料不会参与构建。
+七份 JSON、空白模板和本说明均为公开仓库内容。仅填写展示所需的公开信息；原始名单、私人联系方式、离组日期及原因、审核答复、来源差异与核查备注放 `.local/` 或本地资料台账。内部核查材料不会参与构建。
 
-素材路径相对于 `site/`；方法图保持原比例并可查看原图。新增素材时更新[素材署名](../site/assets/CREDITS.md)。没有公开代码时设置 `codeVisibility: "private"`，保留真实地址但不显示 Code 链接；匿名访问失败不自动改变公开状态。
+素材路径相对于 `site/`；方法图保持原比例并可查看原图。新增素材时更新[素材署名](../site/assets/CREDITS.md)。没有公开代码时设置 `codeVisibility: "private"`，省略代码地址；匿名访问失败不自动改变公开状态。

@@ -94,6 +94,15 @@ def validate_data(data):
                 url(paper[field], label + ": " + field)
         if set(paper) & {"verification", "verificationNote", "codeNote"}:
             errors.append(label + ": keep verification notes in local records")
+        corresponding = paper.get("correspondingAuthors", [])
+        authors = paper.get("authors")
+        if not isinstance(corresponding, list) or any(
+            not isinstance(name, str) or not isinstance(authors, str) or name not in authors.split(", ")
+            for name in corresponding
+        ):
+            errors.append(label + ": corresponding authors must be listed paper authors")
+        if "publicationDetails" in paper:
+            texts(paper, ("publicationDetails",), label)
         if paper.get("figure"):
             asset(paper["figure"], label + ": figure")
 
@@ -117,23 +126,50 @@ def validate_data(data):
             errors.append(label + ": topics must be text list")
         url(group.get("source"), label + ": learning resource")
     homepage = data["homepage"]
-    references(homepage.get("featured"), ids["papers"], "homepage featured")
-    for field in ("updates", "recognition"):
+    if type(homepage.get("year")) is not int or not 1900 <= homepage["year"] <= 2100:
+        errors.append("homepage: invalid selection year")
+    references(homepage.get("legacyPaperAnchors"), ids["papers"], "homepage legacy anchors")
+    for field in ("updates", "featured"):
         rows = homepage.get(field)
-        if not isinstance(rows, list) or any(not isinstance(x, dict) for x in rows):
+        if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
             errors.append("homepage " + field + ": requires array of objects")
             continue
+        references([row.get("paper") for row in rows], ids["papers"], "homepage " + field)
         for row in rows:
-            references([row.get("paper")], ids["papers"], "homepage " + field)
-            if field == "updates":
-                require(row, ("summary",), "homepage updates")
-                texts(row, ("summary",), "homepage updates")
-            else:
-                rich(row.get("label"), "homepage recognition")
+            label = "homepage " + field
+            if field == "updates" or "date" in row:
+                value = row.get("date", "")
+                try:
+                    if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}(?:-[0-9]{2})?", value):
+                        raise ValueError
+                    date.fromisoformat(value + "-01" if len(value) == 7 else value)
+                except ValueError:
+                    errors.append(label + ": invalid date")
+            if "label" in row:
+                texts(row, ("label",), label)
+            if "format" in row and row["format"] not in ("Oral", "Spotlight", "Poster"):
+                errors.append(label + ": invalid presentation format")
+            if "url" in row:
+                url(row["url"], label + ": url")
+
+    month = r"[0-9]{4}\.(?:0[1-9]|1[0-2])"
     for project in data["projects"]:
-        require(project, ("id", "title", "period", "note"), "project")
-        texts(project, ("title", "period", "note"), "project")
-        if project.get("url"):
+        label = str(project.get("id", "project"))
+        require(project, ("id", "title", "category"), label)
+        texts(project, ("title",), label)
+        if project.get("category") not in ("vertical", "horizontal"):
+            errors.append(label + ": invalid project category")
+        if "funding" in project:
+            texts(project, ("funding",), label)
+        if "period" in project:
+            value = project["period"]
+            if not isinstance(value, str) or not re.fullmatch(month + "—" + month, value):
+                errors.append(label + ": period must use YYYY.MM—YYYY.MM")
+            elif value[:7] > value[8:]:
+                errors.append(label + ": project period ends before it starts")
+        if "start" in project and (not isinstance(project["start"], str) or not re.fullmatch(month, project["start"])):
+            errors.append(label + ": start must use YYYY.MM")
+        if "url" in project:
             url(project["url"], "project url")
 
     meta = data["meta"]
@@ -144,11 +180,11 @@ def validate_data(data):
     except (ValueError, TypeError):
         errors.append("team: invalid contentUpdated date")
     nested = {
-        "identity": ("shortName", "suffix", "name", "englishName", "affiliation", "location", "logo", "copyrightYear"),
+        "identity": ("shortName", "suffix", "name", "englishName", "affiliation", "location", "logo", "sidebarLogo", "copyrightYear"),
         "links": ("baseUrl", "organization", "scholar", "college"),
         "lead": ("name", "englishName", "url", "title", "photo", "position", "affiliations", "interests", "honor", "sidebarPosition", "bioAfterName"),
         "contact": ("email", "address", "admissionsUrl", "intro", "admissionsNote"),
-        "copy": ("researchDescription", "peopleDescription", "publicationsDescription", "formerNote", "projectSourceLabel", "projectNote"),
+        "copy": ("publicationsDescription",),
     }
     for key, fields in nested.items():
         if not isinstance(meta.get(key), dict):
@@ -163,6 +199,7 @@ def validate_data(data):
         if type(identity.get("copyrightYear")) is not int:
             errors.append("team identity: copyrightYear must be an integer")
         asset(identity.get("logo"), "team logo")
+        asset(identity.get("sidebarLogo"), "sidebar logo")
     if isinstance(meta.get("lead"), dict):
         url(meta["lead"].get("url"), "lead url")
         rich(meta["lead"].get("bioAfterName"), "lead bio")
