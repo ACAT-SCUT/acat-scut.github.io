@@ -203,7 +203,7 @@ main:focus-visible {
 
 .publication-overview {
   padding-block: 12px;
-  border-block: 1px solid var(--line);
+  border-block-end: 1px solid var(--line-soft);
 }
 
 .publication-overview-row {
@@ -399,7 +399,7 @@ html:has(.back-to-top-page #page-top:target) {
 .publication-direction {
   margin-top: 34px;
   padding-top: 22px;
-  border-color: var(--line);
+  border-top-color: var(--line-section);
 }
 
 .publication-direction .section-heading h2 {
@@ -460,10 +460,11 @@ html:has(.back-to-top-page #page-top:target) {
   gap: 6px;
 }
 
-.publication-direction .venue-presentation {
-  color: var(--muted);
-  background: #eef1f3;
-  border: 1px solid #dce0e6;
+.venue-highlight {
+  color: #774600;
+  background: #fff1d6;
+  border-color: #e5bd72;
+  white-space: nowrap;
 }
 
 .publication-direction .paper-links a {
@@ -512,7 +513,7 @@ html:has(.back-to-top-page #page-top:target) {
 .project-section + .project-section {
   margin-top: 20px;
   padding-top: 12px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-section);
 }
 
 .project-section .section-heading {

@@ -80,7 +80,13 @@ if publications is None or any(paper_id(p) not in publications.ids for p in data
 projects = pages.get("projects.html")
 if projects is None or {"vertical", "horizontal", *(p["id"] for p in data["projects"])} - set(projects.ids):
     errors.append("projects.html: missing project or category anchor")
-for filename in ("index.html", "research.html", "people.html", "publications.html", "projects.html", "404.html"):
+join = pages.get("join.html")
+join_anchors = {"graduate-admissions"}
+if "postdocNotice" in data["meta"]["contact"]:
+    join_anchors.add("postdoc")
+if join is None or join_anchors - set(join.ids):
+    errors.append("join.html: missing admissions or postdoc anchor")
+for filename in ("index.html", "research.html", "people.html", "publications.html", "projects.html", "join.html", "404.html"):
     if filename not in pages:
         errors.append("missing " + filename)
     elif "/sources.html" in pages[filename].refs:
@@ -89,7 +95,8 @@ redirect = SITE / "sources.html"
 if not redirect.exists() or 'content="0;url=/"' not in redirect.read_text(encoding="utf-8"):
     errors.append("sources.html: missing home redirect")
 sitemap = (SITE / "sitemap.xml").read_text(encoding="utf-8")
-if "sources.html" in sitemap or data["meta"]["links"]["baseUrl"] + "projects.html" not in sitemap:
-    errors.append("sitemap: index the projects page and exclude the sources redirect")
+required_locations = {data["meta"]["links"]["baseUrl"] + name for name in ("projects.html", "join.html")}
+if "sources.html" in sitemap or any(f"<loc>{url}</loc>" not in sitemap for url in required_locations):
+    errors.append("sitemap: index the projects and join pages and exclude the sources redirect")
 print(json.dumps({"pages": len(pages), "members": len(data["members"]), "errors": errors}, ensure_ascii=False))
 raise SystemExit(bool(errors))

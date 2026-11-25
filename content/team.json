@@ -42,7 +42,39 @@
         "text": "感兴趣的同学，以及寻求学术交流与科研合作的研究者联系团队。"
       }
     ],
-    "admissionsNote": "招生要求、名额与时间安排，以学校及导师最新通知为准。"
+    "mastersAdmissionsUrl": "https://www2.scut.edu.cn/cs/sszs/list.htm",
+    "doctoralAdmissionsUrl": "https://www2.scut.edu.cn/cs/bszs/list.htm",
+    "postdocNotice": {
+      "url": "https://www2.scut.edu.cn/cs/2026/0409/c46301a623295/page.htm",
+      "publishedOn": "2026-04-09",
+      "plannedPositions": "2–4 名",
+      "directions": [
+        {
+          "title": "算力能效建模与优化",
+          "summary": "研究数据中心与超算中心的集群能效建模、PUE 仿真、混合负载节能调优及能效基准，并面向实际超算和智算场景开发节能工具。"
+        },
+        {
+          "title": "异构算力管理与调度",
+          "summary": "面向 CPU、GPU、NPU 设计资源管理和共享调度机制，研究大模型、高性能计算和大数据场景下的性能与能效优化。"
+        },
+        {
+          "title": "大模型优化与垂直应用",
+          "summary": "研究大模型微调、轻量化、端侧部署、安全性与评测，探索大小模型协同及面向具体行业的应用。"
+        },
+        {
+          "title": "时序预测建模与应用",
+          "summary": "研究轻量化、多变量时序预测模型及工业时序大模型，探索交通和功耗等实际场景的应用。"
+        }
+      ],
+      "experience": [
+        "云计算调度与数据中心节能",
+        "面向计算机系统的 AI，或面向 AI 的计算机系统",
+        "时序预测建模与应用",
+        "大模型相关的人工智能算法"
+      ],
+      "materials": "个人简历和代表性研究成果。简历可列出学习、工作和科研经历，以及发表论文与所获荣誉。",
+      "mailSubject": "应聘博士后-本人姓名-研究方向"
+    }
   },
   "achievements": [
     {
@@ -80,5 +112,9 @@
   },
   "copy": {
     "publicationsDescription": "近年代表论文。会议版与期刊扩展版分别列出。"
+  },
+  "wechat": {
+    "name": "ABC学术技术分享",
+    "qrCode": "assets/abc-wechat-qrcode.png"
   }
 }

@@ -2,7 +2,7 @@
 
 华南理工大学先进计算体系结构团队网站，服务于学术展示与招生交流。ACAT 由林伟伟教授带领，团队介绍、研究、成果、成员及联系入口采用统一的团队口径。页面安排与建设进度见路线图。
 
-[访问网站](https://acat-scut.github.io/) · [数据维护说明](content/README.md) · [建设需求与进度](ROADMAP.md) · [AI 协作规则](AGENTS.md)
+[访问网站](https://acat-scut.github.io/) · [GitHub Pages 审核预览](https://acat-scut.github.io/acat-preview/) · [数据维护说明](content/README.md) · [建设需求与进度](ROADMAP.md) · [AI 协作规则](AGENTS.md)
 
 ## 快速开始
 

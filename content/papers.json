@@ -56,13 +56,17 @@
     "url": "https://doi.org/10.1109/TPAMI.2025.3602445",
     "code": "https://github.com/lss-1138/SparseTSF",
     "figure": "assets/sparsetsf-model.png",
-    "id": "paper-sparsetsf-2026"
+    "id": "paper-sparsetsf-2026",
+    "chineseExplanationUrl": "https://mp.weixin.qq.com/s?__biz=MzkyMTY1MTEzNg==&mid=2247491744&idx=1&sn=42402180154eef68ca0ea1664a7911db&chksm=c182f20ff6f57b198d93abfea2ba1e9b276cd5bf795e961e733024578f2630435711b2a000f0#rd",
+    "correspondingAuthors": [
+      "Weiwei Lin"
+    ]
   },
   {
     "name": "Double-Bench",
     "title": "Are We on the Right Way to Assess Document Retrieval-Augmented Generation?",
     "authors": "Wenxuan Shen, Mingjia Wang, Yaochen Wang, Dongping Chen, Junjie Yang, Yao Wan, Weiwei Lin",
-    "venue": "AAAI · Poster",
+    "venue": "AAAI",
     "year": 2026,
     "area": "llm",
     "summary": "围绕文档检索增强生成构建评测基准，检查文档 RAG 系统的评估方式。",
@@ -71,7 +75,8 @@
     "id": "paper-double-bench-2026",
     "correspondingAuthors": [
       "Weiwei Lin"
-    ]
+    ],
+    "presentation": "Poster"
   },
   {
     "name": "SegRNN",
@@ -83,7 +88,10 @@
     "summary": "通过分段迭代与并行多步预测，构建高效的循环时序预测网络。",
     "url": "https://ieeexplore.ieee.org/document/11313095",
     "code": "https://github.com/lss-1138/SegRNN",
-    "id": "paper-segrnn-2026"
+    "id": "paper-segrnn-2026",
+    "correspondingAuthors": [
+      "Weiwei Lin"
+    ]
   },
   {
     "name": "PAWSSP",
@@ -96,7 +104,10 @@
     "url": "https://doi.org/10.1109/TSC.2025.3643326",
     "code": "",
     "publicationDetails": "IEEE Transactions on Services Computing 19(1), 572–588, January 2026.",
-    "id": "paper-pawssp-2026"
+    "id": "paper-pawssp-2026",
+    "correspondingAuthors": [
+      "Fang Shi"
+    ]
   },
   {
     "name": "Prodigal",
@@ -109,13 +120,16 @@
     "url": "https://doi.org/10.1016/j.knosys.2025.114903",
     "code": "https://github.com/Lslland/Prodigal",
     "publicationDetails": "Knowledge-Based Systems 333, article 114903, 30 January 2026.",
-    "id": "paper-prodigal-2026"
+    "id": "paper-prodigal-2026",
+    "correspondingAuthors": [
+      "Weiwei Lin"
+    ]
   },
   {
     "name": "Surgery",
     "title": "Surgery: Mitigating Harmful Fine-Tuning for Large Language Models via Attention Sink",
     "authors": "Guozhi Liu, Weiwei Lin, Tiansheng Huang, Ruichao Mo, Qi Mu, Xiumin Wang, Li Shen",
-    "venue": "ICML · Spotlight",
+    "venue": "ICML",
     "year": 2026,
     "area": "llm",
     "summary": "通过注意力沉降机制分析有害微调，并利用正则化抑制大模型学习有害模式。",
@@ -124,7 +138,8 @@
     "id": "paper-surgery-2026",
     "correspondingAuthors": [
       "Weiwei Lin"
-    ]
+    ],
+    "presentation": "Spotlight"
   },
   {
     "name": "TQNet",
@@ -151,7 +166,10 @@
     "summary": "结合用户协作与抢占式调度，改善深度学习作业排队时间的可预测性。",
     "url": "https://doi.org/10.1109/TPDS.2025.3624245",
     "codeVisibility": "private",
-    "id": "paper-kairos-2025"
+    "id": "paper-kairos-2025",
+    "correspondingAuthors": [
+      "Weiwei Lin"
+    ]
   },
   {
     "name": "AdaptiveFL",
@@ -163,7 +181,10 @@
     "summary": "面向动态带宽环境研究通信自适应联邦学习。",
     "url": "https://doi.org/10.1109/TNNLS.2025.3560656",
     "code": "https://github.com/Lslland/AdaptiveFL",
-    "id": "paper-adaptivefl-2025"
+    "id": "paper-adaptivefl-2025",
+    "correspondingAuthors": [
+      "Weiwei Lin"
+    ]
   },
   {
     "name": "Device Runtime Prediction",
@@ -206,7 +227,10 @@
     "summary": "通过针对安全关键层的扰动，提高大模型面对有害微调时的安全性与资源效率。",
     "url": "https://doi.org/10.1109/TIFS.2025.3615412",
     "code": "https://github.com/Lslland/T-Vaccine",
-    "id": "paper-t-vaccine-2025"
+    "id": "paper-t-vaccine-2025",
+    "correspondingAuthors": [
+      "Weiwei Lin"
+    ]
   },
   {
     "name": "Cloud Datasets Survey",
@@ -243,7 +267,7 @@
     "name": "CycleNet",
     "title": "CycleNet: Enhancing Time Series Forecasting through Modeling Periodic Patterns",
     "authors": "Shengsheng Lin, Weiwei Lin, Xinyi Hu, Wentai Wu, Ruichao Mo, Haocheng Zhong",
-    "venue": "NeurIPS · Spotlight",
+    "venue": "NeurIPS",
     "year": 2024,
     "area": "ts",
     "summary": "显式建模周期模式，通过周期与残差分解增强时序预测。",
@@ -253,7 +277,9 @@
     "id": "paper-cyclenet-2024",
     "correspondingAuthors": [
       "Weiwei Lin"
-    ]
+    ],
+    "presentation": "Spotlight",
+    "chineseExplanationUrl": "https://mp.weixin.qq.com/s/dQwAWjqS-eQsSn_kRweZLA"
   },
   {
     "name": "TEVP",
@@ -268,13 +294,14 @@
     "id": "paper-tevp-2024",
     "correspondingAuthors": [
       "Weiwei Lin"
-    ]
+    ],
+    "chineseExplanationUrl": "https://www2.scut.edu.cn/cs/2026/0427/c39840a625692/page.htm"
   },
   {
     "name": "SparseTSF",
     "title": "SparseTSF: Modeling Long-term Time Series Forecasting with 1k Parameters",
     "authors": "Shengsheng Lin, Weiwei Lin, Wentai Wu, Haojun Chen, Junjie Yang",
-    "venue": "ICML · Oral",
+    "venue": "ICML",
     "year": 2024,
     "area": "ts",
     "summary": "通过跨周期稀疏预测分离周期性与趋势，以极少参数完成长时间序列预测。",
@@ -283,6 +310,8 @@
     "id": "paper-sparsetsf-2024",
     "correspondingAuthors": [
       "Weiwei Lin"
-    ]
+    ],
+    "presentation": "Oral",
+    "chineseExplanationUrl": "https://mp.weixin.qq.com/s?__biz=MzkyMTY1MTEzNg==&mid=2247491744&idx=1&sn=42402180154eef68ca0ea1664a7911db&chksm=c182f20ff6f57b198d93abfea2ba1e9b276cd5bf795e961e733024578f2630435711b2a000f0#rd"
   }
 ]

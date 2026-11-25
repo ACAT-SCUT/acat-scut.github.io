@@ -84,5 +84,5 @@ def render_groups(people, experiences, groups):
     expected.update("member-" + person["id"] for person in people)
     expected.update("experience-" + experience["id"] for experience in experiences)
     fallback = "".join(anchor(id) for id in sorted(expected - used))
-    heading = '<div class="section-heading"><h2>研究成员<span lang="en">Research Members</span></h2></div>'
+    heading = '<div class="section-heading"><h2>研究成员<span lang="en">Lab Members</span></h2></div>'
     return '<section class="section" id="by-research">\n' + heading + fallback + "\n".join(sections) + '\n</section>'

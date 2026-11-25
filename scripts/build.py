@@ -1,5 +1,6 @@
 """Generate the ACAT website using only Python's standard library."""
 import hashlib
+from datetime import date
 from html import escape
 from pathlib import Path
 
@@ -21,6 +22,7 @@ PAGES = (
     ("publications.html", "论文成果", "publications"),
     ("projects.html", "科研项目", "projects"),
     ("people.html", "团队成员", "people"),
+    ("join.html", "加入我们", "join"),
 )
 UTILITY_ICONS = {
     "faculty": '<path d="M3 21h18M4 21V11l8-6 8 6v10M10 21v-5h4v5m-2-11v1"/>',
@@ -35,6 +37,11 @@ PUBLICATION_ICONS = {
         "M14 2v5a1 1 0 0 0 1 1h5", "M10 9H8", "M16 13H8", "M16 17H8",
     ),
     "code-xml": ("m18 16 4-4-4-4", "m6 8-4 4 4 4", "m14.5 4-5 16"),
+    "newspaper": (
+        "M15 18h-5", "M18 14h-8",
+        "M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2",
+        "M11 6h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z",
+    ),
 }
 
 
@@ -83,7 +90,10 @@ def linked_asset(name, prefix):
 
 def shell(title, active, body):
     prefix = "/" if active == "404" else ""
-    nav = (*PAGES, ("index.html#join", "加入我们", "join"))
+    nav = (
+        ("index.html#join" if key == "join" and active != "join" else url, label, key)
+        for url, label, key in PAGES
+    )
     menu = "\n".join(
         f'<a href="{prefix}{url}"' + (' aria-current="page"' if key == active else "") + f'>{label}</a>'
         for url, label, key in nav
@@ -98,14 +108,14 @@ def shell(title, active, body):
         a(url, icon(UTILITY_ICONS[key], 16, "utility-icon") + f"<span>{e(label)}</span>", css_class)
         for key, url, label, css_class in utility
     )
-    page_styles = {"home": ("home.css",), "people": ("people.css",)}
+    page_styles = {"home": ("home.css",), "join": ("home.css",), "people": ("people.css",)}
     styles = ("styles.css", "pages.css", *page_styles.get(active, ()), "sidebar.css", "logo.css", "utilities.css", "layout.css")
     if active == "publications":
         styles += ("publication-layout.css",)
     styles_html = "\n".join(f'<link rel="stylesheet" href="{linked_asset(name, prefix)}">' for name in styles)
     scripts = {"people": "member-navigation.js", "publications": "publication-navigation.js"}
     script = f'\n<script src="{linked_asset(scripts[active], prefix)}" defer></script>' if active in scripts else ""
-    page_class = {"publications": " publication-page", "people": " people-page"}.get(active, "")
+    page_class = {"publications": " publication-page", "people": " people-page", "join": " join-page"}.get(active, "")
     canonical = "" if active == "404" else f'\n<link rel="canonical" href="{e(LINKS["baseUrl"])}{"" if active == "home" else active + ".html"}">'
     brand = f'{e(IDENTITY["shortName"])} {e(IDENTITY["suffix"])}'
     return f"""<!doctype html>
@@ -159,16 +169,12 @@ def shell(title, active, body):
 """
 
 
-def venue_parts(paper):
-    venue, separator, format_label = paper["venue"].rpartition(" · ")
-    if separator and format_label in ("Spotlight", "Oral", "Poster"):
-        return venue, format_label
-    return paper["venue"], ""
-
-
-def venue_badges(venue, format_label=""):
-    presentation = f' <span class="venue venue-presentation">{e(format_label)}</span>' if format_label else ""
-    return f'<span class="venue">{e(venue)}</span>{presentation}'
+def venue_badges(paper, recognition=""):
+    badges = [f'<span class="venue">{e(paper["venue"])}</span>']
+    for kind, label in (("presentation", paper.get("presentation")), ("recognition", recognition)):
+        if label:
+            badges.append(f'<span class="venue venue-highlight venue-{kind}">{e(label)}</span>')
+    return " ".join(badges)
 
 
 def publication_authors(paper):
@@ -190,11 +196,13 @@ def article(paper):
     links = a(paper["url"], publication_icon("file-text") + " Paper")
     if paper.get("code") and paper.get("codeVisibility", "public") == "public":
         links += a(paper["code"], publication_icon("code-xml") + " Code")
+    if explanation := paper.get("chineseExplanationUrl"):
+        links += a(explanation, publication_icon("newspaper") + " 推文")
     layout = "paper-body has-figure" if figure_html else "paper-body"
     details = paper.get("publicationDetails")
     detail_html = f'<p class="publication-detail">{e(details)}</p>' if details and details not in paper["summary"] else ""
     return f"""<article class="paper" id="{e(paper['id'])}">
-  <div class="paper-top">{venue_badges(*venue_parts(paper))}</div>
+  <div class="paper-top">{venue_badges(paper)}</div>
   <h4 class="paper-title">{e(paper['title'])}</h4>
   <div class="{layout}"><div class="paper-copy">
     <p class="authors">{publication_authors(paper)}</p><p class="paper-summary">{e(paper['summary'])}</p>
@@ -208,23 +216,90 @@ def home_rows(items, *, recent=False):
     for item in items:
         paper = PAPER_MAP[item["paper"]]
         date = item.get("date", str(paper["year"]))
-        url = item.get("url", f'publications.html#{paper["id"]}')
-        venue, _ = venue_parts(paper)
+        url = f'publications.html#{paper["id"]}'
         ident = "" if recent else f' id="{e(paper["id"])}"'
         rows.append(
             f'<li{ident}><div class="achievement-meta"><time datetime="{e(date)}">{e(date[:7].replace("-", "."))}</time>'
-            f'{venue_badges(item.get("label", venue), item.get("format"))}</div>'
+            f'{venue_badges(paper, item.get("recognition", ""))}</div>'
             f'{a(url, e(paper["title"]), "achievement-title")}</li>'
         )
     return '<ul class="home-achievements">\n' + "\n".join(rows) + "\n</ul>"
 
 
+def wechat_follow(account):
+    name = e(account["name"])
+    return (
+        f'<details class="wechat-follow"><summary>微信公众号 · {name}</summary>'
+        f'<p>微信扫码关注，或搜索 <strong>{name}</strong>。</p>'
+        f'<img src="{e(account["qrCode"])}" width="430" height="430" alt="{name}微信公众号二维码">'
+        '</details>'
+    )
+
+
+def join_section():
+    email = CONTACT["email"]
+    mentor = a(LEAD["url"], e(LEAD["name"] + LEAD["title"]))
+    return f"""<section class="section contact" id="join">{heading("加入我们", "Join Us", "join.html")}
+  <p>{rich(CONTACT["intro"])}</p>
+  <p><strong>联系导师：</strong>{mentor}　 <strong>邮箱：</strong>{a("mailto:" + email, e(email))}<br>
+    <strong>地址：</strong>{e(CONTACT["address"])}</p>
+</section>"""
+
+
+def postdoc_section(notice):
+    published = date.fromisoformat(notice["publishedOn"])
+    posted = f'<time datetime="{published.isoformat()}">{published.year} 年 {published.month} 月 {published.day} 日</time>'
+    positions = f'该公告中的计划招收人数为 {e(notice["plannedPositions"])}。' if notice.get("plannedPositions") else ""
+    directions = "".join(
+        f'<li><strong>{e(item["title"])}</strong><p>{e(item["summary"])}</p></li>'
+        for item in notice.get("directions", ())
+    )
+    experience = "".join(f"<li>{e(item)}</li>" for item in notice.get("experience", ()))
+    direction_list = f'<h3>研究方向</h3><ol class="postdoc-directions">{directions}</ol>' if directions else ""
+    experience_list = f"<h3>研究经历</h3><p>具备以下任一方向的研究经历即可。</p><ul>{experience}</ul>" if experience else ""
+    email = CONTACT["email"]
+    details = []
+    if notice.get("materials"):
+        details.append(f'<dt>投递材料</dt><dd>{e(notice["materials"])}</dd>')
+    details.append(f'<dt>投递邮箱</dt><dd>{a("mailto:" + email, e(email))}</dd>')
+    if notice.get("mailSubject"):
+        details.append(f'<dt>邮件主题</dt><dd>{e(notice["mailSubject"])}</dd>')
+    return f"""<section class="section" id="postdoc">{heading("博士后应聘", "Postdoctoral Applications")}
+  <p class="note">学院公告发布于 {posted}。{positions}当前岗位状态以学院最新通知为准。</p>
+  {direction_list}
+  {experience_list}
+  <h3>应聘方式</h3>
+  <dl class="postdoc-application">{"".join(details)}</dl>
+  <p>{a(notice["url"], "查看学院原公告")}</p>
+</section>"""
+
+
+def join_page():
+    school = a(CONTACT["admissionsUrl"], "华南理工大学研究生招生网")
+    college_links = []
+    for field, label in (("mastersAdmissionsUrl", "学院硕士招生"), ("doctoralAdmissionsUrl", "学院博士招生")):
+        if url := CONTACT.get(field):
+            college_links.append(f"<li>{a(url, label)}</li>")
+    college = f'<ul class="graduate-admissions-links">{"".join(college_links)}</ul>' if college_links else ""
+    graduate = f"""<section class="section" id="graduate-admissions">{heading("研究生招生", "Graduate Admissions")}
+  <p>欢迎拟报考硕士或博士的同学了解团队的{a("research.html", "研究方向")}。</p>
+  <p class="graduate-admissions-primary">{school}</p>
+  <p class="note graduate-admissions-note">招生章程、专业目录与报名安排</p>
+  {college}
+</section>"""
+    notice = CONTACT.get("postdocNotice")
+    return page_head("JOIN US", "加入我们") + graduate + (postdoc_section(notice) if notice else "")
+
+
 def home():
     short = e(IDENTITY["shortName"])
     about = e(META["about"]).replace(short, f"<strong>{short}</strong>", 1)
+    first_sentence, punctuation, remainder = about.partition("。")
+    if remainder:
+        about = f"{first_sentence}{punctuation}<br>{remainder}"
     lead = a(LEAD["url"], f'<strong>{e(LEAD["name"])}{e(LEAD["title"])}</strong>')
     intro = f"""<section class="about" id="about">
-  <p class="kicker">ABOUT / 团队简介</p><h1>{e(IDENTITY['name'])}</h1>
+  <p class="kicker">ABOUT</p><h1>{e(IDENTITY['name'])}</h1>
   <p class="english-name">{e(IDENTITY['englishName'])}</p><p>{about}</p>
   <p class="lead-bio">{lead}{rich(LEAD['bioAfterName'])}</p>
 </section>"""
@@ -247,12 +322,11 @@ def home():
         updates = '<section class="section" id="updates">' + heading("最新动态", "Latest News") + home_rows(latest, recent=True) + "</section>"
     highlights = '<span class="preserved-anchor" id="papers"></span>' + aliases
     if featured:
-        highlights = '<section class="section" id="papers">' + aliases + heading("代表性成果", "Selected Results", "publications.html") + home_rows(featured) + "</section>"
-    join = '<section class="section contact" id="join">' + heading("加入我们", "Join Us")
-    join += (f'<p>{rich(CONTACT["intro"])}</p><p>{a("mailto:" + CONTACT["email"], "联系团队")} · '
-             f'{a(CONTACT["admissionsUrl"], "研究生招生信息")}<br>{e(CONTACT["address"])}</p>'
-             f'<p class="note">{e(CONTACT["admissionsNote"])}</p></section>')
-    return "\n".join((intro, research, updates, highlights, join))
+        highlights = '<section class="section" id="papers">' + aliases + heading("代表性成果", "Research Highlights", "publications.html") + home_rows(featured)
+        if account := META.get("wechat"):
+            highlights += wechat_follow(account)
+        highlights += "</section>"
+    return "\n".join((intro, research, updates, highlights, join_section()))
 
 
 def research_page():
@@ -328,7 +402,7 @@ def project_order(project):
 
 
 def projects_page():
-    body = page_head("Research Projects", "科研项目")
+    body = page_head("RESEARCH PROJECTS", "科研项目")
     projects = sorted(DATA["projects"], key=project_order)
     for category, title in (("vertical", "纵向课题"), ("horizontal", "横向课题")):
         body += f'<section class="section project-section" id="{category}">{heading(title)}<div class="project-list project-groups">'
@@ -370,7 +444,7 @@ def write(filename, text):
 
 
 def main():
-    renderers = {"home": home, "research": research_page, "publications": publications_page, "projects": projects_page, "people": people_page}
+    renderers = {"home": home, "research": research_page, "publications": publications_page, "projects": projects_page, "people": people_page, "join": join_page}
     for filename, title, active in PAGES:
         write(filename, shell(IDENTITY["name"] if active == "home" else title, active, renderers[active]()))
     write("404.html", shell("页面未找到", "404", page_head("404", "页面未找到", "这个地址没有对应的页面，请返回首页继续浏览。") + a("/", "返回首页 →")))

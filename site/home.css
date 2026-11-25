@@ -17,6 +17,10 @@
   text-decoration: none;
 }
 
+#main > .section {
+  border-top-color: var(--line-section);
+}
+
 .home-achievements {
   margin: 0;
   padding: 0;
@@ -25,7 +29,6 @@
 
 .home-achievements li {
   padding: 8px 0 10px;
-  border-bottom: 1px solid var(--line-soft);
 }
 
 .home-achievements li:first-child {
@@ -33,7 +36,6 @@
 }
 
 .home-achievements li:last-child {
-  border-bottom: 0;
   padding-bottom: 0;
 }
 
@@ -57,8 +59,88 @@
   background: var(--blue-soft);
 }
 
+.wechat-follow {
+  margin-top: 12px;
+  font-size: .875rem;
+}
+
+.wechat-follow summary {
+  width: fit-content;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.wechat-follow summary:hover {
+  text-decoration: underline;
+}
+
+.wechat-follow p {
+  margin: 6px 0 8px;
+  color: var(--muted);
+}
+
+.wechat-follow img {
+  display: block;
+  width: min(100%, 168px);
+  height: auto;
+}
+
+.join-page #graduate-admissions {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.join-page #main a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#graduate-admissions .graduate-admissions-primary {
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+#graduate-admissions .graduate-admissions-note {
+  margin: 0;
+}
+
+#graduate-admissions .graduate-admissions-links {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  margin: 12px 0 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.postdoc-directions li > p {
+  margin: 2px 0 8px;
+}
+
+.postdoc-application {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 12px;
+  margin: 0 0 13px;
+}
+
+.postdoc-application dt {
+  color: var(--muted);
+}
+
+.postdoc-application dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 @media (width <= 600px) {
   .home-detail {
     min-height: 44px;
+  }
+
+  .wechat-follow summary {
+    padding-block: 10px;
   }
 }

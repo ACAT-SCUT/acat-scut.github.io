@@ -3,7 +3,7 @@
     "id": "power",
     "title": "数据中心节能与绿色计算",
     "short": "绿色计算",
-    "en": "Sustainable Computing",
+    "en": "Data Center Energy Efficiency and Green Computing",
     "summary": "面向数据中心的计算与能源系统，研究服务器算力、集群能效和整体节能。",
     "topics": [
       "服务器算力与集群能效建模优化",
@@ -38,7 +38,7 @@
     "id": "scheduling",
     "title": "算力优化和算电协同",
     "short": "算力与算电",
-    "en": "Computing and Energy Coordination",
+    "en": "Compute Resource Optimization and Power Coordination",
     "summary": "围绕异构 AI 算力和能源供给，研究高效调度、应用优化与算电协同。",
     "topics": [
       "CPU、GPU、NPU 等异构算力调度优化",
@@ -72,7 +72,7 @@
     "id": "llm",
     "title": "大模型优化与应用",
     "short": "大模型",
-    "en": "Large Language Models",
+    "en": "Large Language Model Optimization and Applications",
     "summary": "研究大模型的资源效率、安全性与应用能力，探索面向真实业务的智能体技术。",
     "topics": [
       "资源安全高效的大模型微调",

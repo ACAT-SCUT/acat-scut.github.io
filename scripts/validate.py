@@ -4,6 +4,9 @@ import re
 from urllib.parse import urlparse
 
 
+PRESENTATION_TYPES = ("Oral", "Spotlight", "Poster")
+
+
 def paper_id(paper):
     return paper["id"]
 
@@ -87,6 +90,11 @@ def validate_data(data):
             errors.append(label + ": invalid publication year")
         if not str(paper.get("id", "")).startswith("paper-"):
             errors.append(label + ": paper id must start with paper-")
+        if "presentation" in paper and paper["presentation"] not in PRESENTATION_TYPES:
+            errors.append(label + ": invalid presentation format")
+        venue = paper.get("venue")
+        if isinstance(venue, str) and venue.endswith(tuple(" · " + value for value in PRESENTATION_TYPES)):
+            errors.append(label + ": keep presentation separate from venue")
         if paper.get("codeVisibility", "public") not in ("public", "private"):
             errors.append(label + ": invalid code visibility")
         for field in ("url", "code"):
@@ -101,6 +109,10 @@ def validate_data(data):
             for name in corresponding
         ):
             errors.append(label + ": corresponding authors must be listed paper authors")
+        if "chineseExplanationUrl" in paper:
+            url(paper["chineseExplanationUrl"], label + ": Chinese explanation")
+        if "coverage" in paper:
+            errors.append(label + ": select one article for chineseExplanationUrl")
         if "publicationDetails" in paper:
             texts(paper, ("publicationDetails",), label)
         if paper.get("figure"):
@@ -145,12 +157,12 @@ def validate_data(data):
                     date.fromisoformat(value + "-01" if len(value) == 7 else value)
                 except ValueError:
                     errors.append(label + ": invalid date")
-            if "label" in row:
-                texts(row, ("label",), label)
-            if "format" in row and row["format"] not in ("Oral", "Spotlight", "Poster"):
-                errors.append(label + ": invalid presentation format")
+            if "recognition" in row:
+                texts(row, ("recognition",), label)
+            if "label" in row or "format" in row:
+                errors.append(label + ": use paper presentation or a separate recognition field")
             if "url" in row:
-                url(row["url"], label + ": url")
+                errors.append(label + ": title links use the paper ID; put explainers in the paper record")
 
     month = r"[0-9]{4}\.(?:0[1-9]|1[0-2])"
     for project in data["projects"]:
@@ -183,7 +195,7 @@ def validate_data(data):
         "identity": ("shortName", "suffix", "name", "englishName", "affiliation", "location", "logo", "sidebarLogo", "copyrightYear"),
         "links": ("baseUrl", "organization", "scholar", "college"),
         "lead": ("name", "englishName", "url", "title", "photo", "position", "affiliations", "interests", "honor", "sidebarPosition", "bioAfterName"),
-        "contact": ("email", "address", "admissionsUrl", "intro", "admissionsNote"),
+        "contact": ("email", "address", "admissionsUrl", "intro"),
         "copy": ("publicationsDescription",),
     }
     for key, fields in nested.items():
@@ -205,13 +217,47 @@ def validate_data(data):
         rich(meta["lead"].get("bioAfterName"), "lead bio")
         asset(meta["lead"].get("photo"), "lead photo")
     if isinstance(meta.get("contact"), dict):
-        url(meta["contact"].get("admissionsUrl"), "admissions url")
-        rich(meta["contact"].get("intro"), "contact intro")
+        contact = meta["contact"]
+        url(contact.get("admissionsUrl"), "admissions url")
+        rich(contact.get("intro"), "contact intro")
+        for field in ("mastersAdmissionsUrl", "doctoralAdmissionsUrl"):
+            if field in contact:
+                url(contact[field], "team contact " + field)
+        if "postdocNotice" in contact:
+            notice = contact["postdocNotice"]
+            if not isinstance(notice, dict):
+                errors.append("team postdoc notice: must be an object")
+            else:
+                url(notice.get("url"), "team postdoc notice")
+                try:
+                    date.fromisoformat(notice.get("publishedOn", ""))
+                except (TypeError, ValueError):
+                    errors.append("team postdoc notice: invalid publishedOn date")
+                texts(notice, [field for field in ("plannedPositions", "materials", "mailSubject") if field in notice],
+                      "team postdoc notice")
+                if "directions" in notice:
+                    directions = notice["directions"]
+                    if not isinstance(directions, list) or not directions or any(not isinstance(item, dict) for item in directions):
+                        errors.append("team postdoc notice: directions must be a nonempty list of objects")
+                    else:
+                        for item in directions:
+                            texts(item, ("title", "summary"), "team postdoc direction")
+                if "experience" in notice:
+                    experience = notice["experience"]
+                    if not isinstance(experience, list) or not experience or any(not isinstance(item, str) or not item.strip() for item in experience):
+                        errors.append("team postdoc notice: experience must be a nonempty list of text")
     if isinstance(meta.get("links"), dict):
         for key in nested["links"]:
             url(meta["links"].get(key), "team link " + key)
         if not str(meta["links"].get("baseUrl", "")).endswith("/"):
             errors.append("team links: baseUrl must end with /")
+    if "wechat" in meta:
+        account = meta["wechat"]
+        if not isinstance(account, dict):
+            errors.append("team wechat: must be an object")
+        else:
+            texts(account, ("name",), "team wechat")
+            asset(account.get("qrCode"), "team wechat QR code")
     if not isinstance(meta.get("achievements"), list) or any(not isinstance(x, dict) or not x.get("title") or not x.get("text") for x in meta.get("achievements", [])):
         errors.append("team achievements: requires title and text")
     return errors

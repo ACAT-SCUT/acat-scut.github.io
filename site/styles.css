@@ -5,6 +5,7 @@
   --accent: #0f3d75;
   --line: #dde4ec;
   --line-soft: #e7ecf1;
+  --line-section: #c4d1df;
   --blue-soft: #eaf0f7;
 }
 * {
@@ -426,11 +427,19 @@ img {
   font-size: 15px;
   margin-bottom: 0;
 }
+.research-detail:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+.research-detail + .research-detail {
+  border-top-color: var(--line-section);
+}
 .research-detail .section-heading {
   margin-bottom: 13px;
 }
 .research-detail h2 span {
   font-size: 14px;
+  white-space: normal;
 }
 .research-detail>p {
   font-size: 15px;

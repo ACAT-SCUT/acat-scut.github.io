@@ -72,6 +72,10 @@ html:has(.people-page) {
   position: relative;
 }
 
+.people-page #by-research {
+  border-top-color: var(--line-section);
+}
+
 .people-page .member-direction {
   padding-top: 20px;
   margin-top: 26px;

@@ -8,11 +8,11 @@
 
 | 文件 | 必填字段 | 可选字段及说明 | 维护者 |
 |---|---|---|---|
-| `team.json` | `contentUpdated`、`description`、`about`、`lead`、`contact`、`achievements`、`identity`、`links`、`copy` | 各子对象见下表；荣誉允许空数组 | 团队指定维护者 |
+| `team.json` | `contentUpdated`、`description`、`about`、`lead`、`contact`、`achievements`、`identity`、`links`、`copy` | 各子对象见下表；荣誉允许空数组；`wechat` 可省略 | 团队指定维护者 |
 | `research.json` | 每行 `id`、`title`、`short`、`en`、`summary`、`topics`、`memberOrder`、`examples`、`source` | `source` 是公开学习资源链接；`memberOrder` 供旧接口排序，归属由经历表生成；例子允许空数组 | 方向负责人建议，维护者审核 |
 | `members.json` | 每行 `id`、`name`、`displayExperienceId` | `url` 为 HTTPS 主页，`sortName` 为小写、按音节用空格分隔的拼音排序键；姓名及主页由所有经历共用 | 学生申请，维护者审核 |
 | `member-experiences.json` | 每行 `id`、`memberId`、`role`、`status`、`graduationConfirmed`、`researchIds`；硕博须有 `entryYear` | 博士后的 `entryYear` 为入站年，可省略；一段经历一条，方向归属只在本表维护 | 学生申请，维护者审核 |
-| `papers.json` | 每行 `id`、`name`、`title`、`authors`、`venue`、`year`、`area`、`summary`、`url` | `short` 简称、`code` 代码地址、`codeVisibility`（默认 `public`，私有填 `private`）、`figure` 方法图路径、`publicationDetails` 正式出版补充信息、`correspondingAuthors` 已确认的通讯作者姓名数组 | 作者或方向负责人建议，维护者审核 |
+| `papers.json` | 每行 `id`、`name`、`title`、`authors`、`venue`、`year`、`area`、`summary`、`url` | `short` 简称、`presentation` 已确认的展示形式（Oral／Spotlight／Poster）、`code` 代码地址、`codeVisibility`（默认 `public`，私有填 `private`）、`figure` 方法图路径、`publicationDetails` 正式出版补充信息、`correspondingAuthors` 已确认的通讯作者姓名数组、`chineseExplanationUrl` 一个经核实的中文解读 HTTPS 链接，在 Paper、Code 旁显示为「推文」 | 作者或方向负责人建议，维护者审核 |
 | `projects.json` | 每行 `id`、`title`、`category`（`vertical`／`horizontal`） | `funding` 资助或合作信息，`period` 起止年月（`YYYY.MM—YYYY.MM`），`start` 供缺完整区间时排序，`url` 公开项目页 | 项目相关人员提供，维护者审核 |
 | `homepage.json` | `year`、`featured`、`updates`、`legacyPaperAnchors` | 列表允许为空；首页条目由人工选取 | 团队指定维护者 |
 
@@ -22,14 +22,28 @@
 |---|---|
 | `identity` | `shortName`、`suffix`、`name`、`englishName`、`affiliation`（按行文本数组）、`location`、`logo`（favicon）、`sidebarLogo`（侧栏透明图）、`copyrightYear` |
 | `lead` | `name`、`englishName`、`url`、`title`、`photo`、`position`、`affiliations`、`interests`、`honor`、`sidebarPosition`、`bioAfterName`（姓名链接后的简介片段） |
-| `contact` | `email`、`address`、`admissionsUrl`、`intro`（欢迎语片段）、`admissionsNote` |
+| `contact` | `email`（首页、侧栏与应聘区共用）、`address`（首页地址）、`intro`（首页欢迎语片段）、`admissionsUrl`（学校招生网）、可选 `mastersAdmissionsUrl`、`doctoralAdmissionsUrl`（学院招生入口）、可选 `postdocNotice`（下文） |
 | `links` | `baseUrl`（站点绝对根地址，末尾 `/`）、`organization`（GitHub 组织）、`scholar`（负责人学术主页）、`college`（负责人学院个人主页） |
 | `achievements` | 荣誉列表，每项 `title`、`text`；团队与个人荣誉不混用 |
 | `copy` | `publicationsDescription`（论文页首简介） |
+| `wechat` | `name`（公众号全名）、`qrCode`（相对 `site/` 的原始二维码路径）。用于首页代表性成果末尾的关注入口 |
+
+博士后公告在 `contact.postdocNotice` 中维护。填写原公告 `url` 与 ISO 发布日期 `publishedOn`。按需填写公告计划数 `plannedPositions`、依原序整理的研究方向 `directions`（每项 `title`、`summary`）、研究经历 `experience`（文字数组）、申请材料 `materials` 和 `mailSubject`。移除整个公告字段后，详情页省略博士后板块。
 
 片段是 `[{"text": "文字"}, {"text": "重点", "tag": "strong"}]`，`tag` 只可省略或为 `strong`／`b`，不填写 HTML。模板负责转义和排版。
 
-首页的 `featured` 和 `updates` 均通过 `paper` 引用论文，可按需填 `label`、`format`、`url`。动态还须填写 `date`（`YYYY-MM` 或 `YYYY-MM-DD`），按所选 `year` 的日期倒序展示，最多五条。代表性成果按录入顺序展示。已对外使用的首页论文锚点保存在 `legacyPaperAnchors`，更换精选时仍可直达。
+首页的 `featured` 和 `updates` 均通过 `paper` 引用论文，可按需填 `recognition`（独立的荣誉标签）。题名按论文 ID 链接到本站论文条目，刊会和展示形式从论文记录读取，中文解读随论文维护。动态还须填写 `date`（`YYYY-MM` 或 `YYYY-MM-DD`），按所选 `year` 的日期倒序展示，最多五条。代表性成果按录入顺序展示。已对外使用的首页论文锚点保存在 `legacyPaperAnchors`，更换精选时仍可直达。
+
+### 论文解读来源
+
+论文的 `summary` 用中文概括问题、方法和贡献。已有对应解读时，通过 `chineseExplanationUrl` 填写一条原页地址，网站统一显示为「推文」。
+
+可信公众号的使用优先顺序如下。
+
+1. **ABC学术技术分享**，团队公众号。
+2. **时空探索之旅**。
+
+名单内的账号通过来源审核。接入前核对原文显示的发文账号和技术内容，确认正文对应论文及其版本。会议版和期刊扩展版分别匹配。解读正文同时讲解两个版本时，两条记录可共用链接。两家公众号均无已核实的匹配时，可选经核实的作者解读或学院通报。核对信息留内部台账。
 
 ## ID、关系与人工判断
 

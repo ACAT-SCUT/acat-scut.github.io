@@ -12,8 +12,7 @@
     {
       "paper": "paper-tevp-2024",
       "date": "2026-04-18",
-      "label": "FGCS · 入选主编精选论文",
-      "url": "https://www2.scut.edu.cn/cs/2026/0427/c39840a625692/page.htm"
+      "recognition": "Editor’s Choice"
     },
     {
       "paper": "paper-prodigal-2026",
@@ -22,12 +21,10 @@
   ],
   "featured": [
     {
-      "paper": "paper-sparsetsf-2024",
-      "format": "Oral"
+      "paper": "paper-sparsetsf-2024"
     },
     {
-      "paper": "paper-cyclenet-2024",
-      "format": "Spotlight"
+      "paper": "paper-cyclenet-2024"
     },
     {
       "paper": "paper-sparsetsf-2026"
