@@ -1,0 +1,27 @@
+.roster-group + .roster-group {
+  margin-top: 22px;
+}
+
+.roster-group h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.roster-names {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  gap: 5px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .9375rem;
+}
+
+.roster-names li {
+  min-width: 0;
+  padding: 4px 0;
+}
+
+.roster-names li:target {
+  background: var(--blue-soft);
+}

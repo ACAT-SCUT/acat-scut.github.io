@@ -1,0 +1,192 @@
+/* The home page uses dates for news and short contributions for research. */
+.home-page .section {
+  padding-top: 20px;
+  margin-top: 22px;
+  border-top-color: var(--line-section);
+}
+
+.home-page .section-heading {
+  margin-bottom: 10px;
+}
+
+.home-page .english-name {
+  margin-bottom: 10px;
+}
+
+.home-page .about .lead-bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1px 14px;
+  margin-bottom: 0;
+}
+
+.lead-profile,
+.section-link {
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-page .research-overview {
+  gap: 6px;
+}
+
+.home-page .research-row {
+  grid-template-columns: minmax(11.25rem, max-content) minmax(0, 1fr);
+  gap: 4px 16px;
+}
+
+.home-page .research-row h3 a {
+  color: var(--accent);
+}
+
+.home-page .news-list,
+.featured-works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-page .news-list li {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 8px;
+  margin: 0;
+  padding: 3px 0;
+  font-size: .9375rem;
+}
+
+.news-list time,
+.work-venue {
+  color: var(--muted);
+  font-size: .875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-page .news-list p,
+.featured-works p {
+  margin: 0;
+}
+
+.home-page .news-list a,
+.featured-works a {
+  font-weight: 650;
+}
+
+.featured-works li {
+  padding: 5px 0;
+}
+
+.featured-works li > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1px 12px;
+}
+
+.featured-works p {
+  color: var(--muted);
+  font-size: .9375rem;
+}
+
+.featured-works li:target {
+  background: var(--blue-soft);
+}
+
+@media (max-width: 800px) {
+  .home-page .research-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .news-list li {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    font-size: .875rem;
+  }
+}
+
+.wechat-follow {
+  margin-top: 12px;
+  font-size: .875rem;
+}
+
+.wechat-follow summary {
+  width: fit-content;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.wechat-follow summary:hover {
+  text-decoration: underline;
+}
+
+.wechat-follow p {
+  margin: 6px 0 8px;
+  color: var(--muted);
+}
+
+.wechat-follow img {
+  display: block;
+  width: min(100%, 168px);
+  height: auto;
+}
+
+.join-page #graduate-admissions {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.join-page #main a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#graduate-admissions .graduate-admissions-primary {
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+#graduate-admissions .graduate-admissions-note {
+  margin: 0;
+}
+
+#graduate-admissions .graduate-admissions-links {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  margin: 12px 0 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.postdoc-directions li > p {
+  margin: 2px 0 8px;
+}
+
+.postdoc-application {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 12px;
+  margin: 0 0 13px;
+}
+
+.postdoc-application dt {
+  color: var(--muted);
+}
+
+.postdoc-application dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (width <= 600px) {
+  .wechat-follow summary {
+    padding-block: 10px;
+  }
+}

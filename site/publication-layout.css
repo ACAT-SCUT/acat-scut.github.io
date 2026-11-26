@@ -1,0 +1,82 @@
+.publication-overview {
+  container: publication-overview / inline-size;
+}
+
+.publication-overview-grid {
+  --paper-columns: 2;
+  display: grid;
+  grid-template-columns: 5.375rem repeat(var(--paper-columns), minmax(0, max-content));
+  column-gap: 22px;
+}
+
+.publication-overview-row,
+.publication-overview ul {
+  grid-template-columns: subgrid;
+  column-gap: normal;
+}
+
+.publication-overview-row {
+  grid-column: 1 / -1;
+  align-items: start;
+}
+
+.publication-overview ul {
+  display: grid;
+  grid-column: 2 / -1;
+  row-gap: 4px;
+}
+
+.publication-overview li {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.publication-overview time {
+  white-space: nowrap;
+}
+
+.publication-list > .publication-direction:first-child {
+  margin-top: 24px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.publication-year + .publication-year {
+  margin-top: 24px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (width > 600px) {
+  @container publication-overview (inline-size >= 40rem) {
+    .publication-overview-grid { --paper-columns: 3; }
+  }
+
+  @container publication-overview (inline-size >= 48rem) {
+    .publication-overview-grid { --paper-columns: 4; }
+  }
+
+  @container publication-overview (inline-size >= 55rem) {
+    .publication-overview-grid { --paper-columns: 5; }
+  }
+
+  @container publication-overview (inline-size >= 63rem) {
+    .publication-overview-grid { --paper-columns: 6; }
+  }
+}
+
+@media (width <= 600px) {
+  .publication-overview-grid {
+    grid-template-columns: repeat(var(--paper-columns), minmax(0, max-content));
+    column-gap: 16px;
+  }
+
+  .publication-overview-direction,
+  .publication-overview ul {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width < 360px) {
+  .publication-overview-grid { --paper-columns: 1; }
+}

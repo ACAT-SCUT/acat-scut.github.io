@@ -1,0 +1,124 @@
+.sidebar .lab-logo {
+  width: 132px;
+  height: 132px;
+  margin-bottom: 14px;
+}
+
+.sidebar .lab-name span {
+  font-size: .875em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sidebar .lab-chinese {
+  margin: 5px 0 7px;
+}
+
+.sidebar .affiliation {
+  margin-bottom: 6px;
+}
+
+.sidebar .location {
+  margin-bottom: 13px;
+}
+
+.sidebar .sidebar-lead {
+  padding: 11px 0;
+}
+
+.sidebar .site-nav {
+  gap: 2px;
+  padding: 7px 0;
+}
+
+.sidebar .site-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  margin: 0;
+  padding: 4px 10px;
+  border-inline-start: 2px solid transparent;
+  color: var(--text);
+  font-size: .9375rem;
+}
+
+.sidebar .site-nav a[aria-current="page"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.sidebar .sidebar-links {
+  gap: 3px;
+  padding-top: 9px;
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sidebar-links a > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.utility-icon {
+  flex: 0 0 16px;
+}
+
+@media (601px <= width <= 800px) {
+  .sidebar .lab-logo {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    margin-bottom: 19px;
+    padding-bottom: 0;
+  }
+
+  .sidebar .lab-identity {
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 6px;
+  }
+
+  .sidebar .lab-logo {
+    width: 46px;
+    height: 46px;
+    margin: 0;
+  }
+
+  .sidebar .lab-name {
+    font-size: 1.25rem;
+  }
+
+  .sidebar :is(.lab-chinese, .affiliation, .sidebar-links) {
+    display: none;
+  }
+
+  .sidebar .site-nav {
+    display: grid;
+    grid-template-columns: minmax(0, .58fr) repeat(4, minmax(0, 1fr));
+    padding: 0;
+  }
+
+  .sidebar .site-nav a {
+    justify-content: center;
+    min-height: 44px;
+    padding: 3px 0;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    font-size: .875rem;
+    white-space: nowrap;
+  }
+
+  .sidebar .site-nav a[aria-current="page"] {
+    border-color: var(--accent);
+    background: none;
+  }
+}
